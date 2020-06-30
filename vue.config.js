@@ -10,6 +10,7 @@ module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
     ? '/dist/'
     : '/',
+
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
@@ -20,6 +21,7 @@ module.exports = {
       },
     },
   },
+
   devServer: {
     open: true,
     overlay: {
@@ -27,4 +29,8 @@ module.exports = {
       errors: true,
     },
   },
+
+  pwa: {
+    name: 'Drascom CRM'
+  }
 };

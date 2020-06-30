@@ -7,9 +7,7 @@ import Layout from '@/views/layout/TheLayout.vue';
 import authRouter from './modules/auth';
 import errorsRouter from './modules/errors';
 import permissionRouter from './modules/permission';
-import vuetifyRouter from '@/demo/router/vuetify';
-import nestedRouter from '@/demo/router/nested';
-import componentsRouter from '@/demo/router/components';
+
 
 Vue.use(Router);
 
@@ -139,9 +137,6 @@ export default new Router({
 export const asyncRoutes = [
   /** When your routing table is too long, you can split it into small modules */
   permissionRouter,
-  vuetifyRouter,
-  ...componentsRouter,
-  nestedRouter,
   errorsRouter,
   { path: '*', redirect: '/error/404', hidden: true },
 ];

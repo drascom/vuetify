@@ -12,6 +12,7 @@ import vuetify from '@/locale/vuetify';
 import en from './en_US';
 import zh from './zh_CN';
 import ru from './ru_RU';
+import tr from './tr_TR';
 
 Vue.use(VueI18n);
 
@@ -28,6 +29,10 @@ const messages = {
     ...ru,
     $vuetify: vuetify.ru,
   },
+  tr: {
+    ...tr,
+    $vuetify: vuetify.tr,
+  },
 };
 
 /**
@@ -40,14 +45,19 @@ export const locales = [
     abbr: 'ENG',
   },
   {
-    title: '中文',
-    locale: 'zh',
-    abbr: 'CHN',
-  },
-  {
     title: 'Русский',
     locale: 'ru',
     abbr: 'RUS',
+  },
+  {
+    title: 'Türkçe',
+    locale: 'tr',
+    abbr: 'TR',
+  },
+  {
+    title: '中文',
+    locale: 'zh',
+    abbr: 'CHN',
   },
 ];
 

@@ -1,9 +1,7 @@
 import route from './route';
-import components from '@/demo/locale/ru_RU/components';
 
 export default {
   route,
-  components,
   toolbar: {
     appname: 'Приложение',
     settings: 'Настройки',
