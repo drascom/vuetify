@@ -30,3 +30,8 @@ export default {
   data: () => ({}),
 };
 </script>
+<style lang="scss">
+v-main{
+transition-duration: 1s!important;
+}
+</style>

@@ -1,0 +1,73 @@
+/*=========================================================================================
+    File Name: profile.scss
+    Description: Profile page styles
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+      Author: Pixinvent
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+#profile-page {
+  .profile-img-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -3.6rem;
+    left: 10%;
+    width: 80%;
+    justify-content: space-between;
+  }
+
+  .user-profile-img {
+    border: 0.3rem solid #fff;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .user-latest-image {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .profile-header-nav {
+    background-color: #fff;
+  }
+  .selectedline {
+    line-height: 1.5;
+    letter-spacing: 0.01rem;
+    direction: ltr;
+    --vs-light: 245, 245, 245;
+    --vs-primary: 91, 60, 196;
+    --vs-success: 23, 201, 100;
+    --vs-danger: 242, 19, 93;
+    --vs-warning: 255, 130, 0;
+    --vs-dark: 36, 33, 69;
+    --vh: 8.54px;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    border-collapse: separate;
+    border-spacing: 0 1.3rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-transform: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: rgba(var(--vs-primary), 1);
+    box-shadow: 0 0 1px 0 rgba(var(--vs-primary), 1) !important;
+    transform: translate(0) !important;
+    background: rgba(var(--vs-primary), 0.05) !important;
+    cursor: pointer;
+  }
+  .icon-corner-right-down {
+    font-size: 1.5rem;
+  }
+  .con-example-images {
+    max-height: 300px;
+    overflow: auto;
+  }
+}

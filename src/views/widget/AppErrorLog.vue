@@ -1,22 +1,26 @@
 <template>
-  <v-btn
-    color="error"
-    disabled
-    icon
-  >
-    <v-icon>mdi-bug</v-icon>
-  </v-btn>
+<v-card v-if="errors">
+   <v-alert
+   dense
+   dismissible
+   outlined
+   transition="scale-transition"
+   close-icon="mdi-delete"
+   type="info"
+   v-for="(error,index) in errors"  :key="index">
+      {{error}}
+    </v-alert>
+</v-card>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'AppErrorLog',
-  computed: {
-    ...mapGetters([]),
-  },
-  methods: {
+  props: {
+    errors: {
+      type: Array,
+      default:null
+    },
   },
 };
 </script>

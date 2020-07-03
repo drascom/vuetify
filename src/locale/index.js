@@ -10,7 +10,6 @@ import VueI18n from 'vue-i18n';
 import { settings } from '@/config';
 import vuetify from '@/locale/vuetify';
 import en from './en_US';
-import zh from './zh_CN';
 import ru from './ru_RU';
 import tr from './tr_TR';
 
@@ -20,10 +19,6 @@ const messages = {
   en: {
     ...en,
     $vuetify: vuetify.en,
-  },
-  zh: {
-    ...zh,
-    $vuetify: vuetify.zh,
   },
   ru: {
     ...ru,
@@ -53,11 +48,6 @@ export const locales = [
     title: 'Türkçe',
     locale: 'tr',
     abbr: 'TR',
-  },
-  {
-    title: '中文',
-    locale: 'zh',
-    abbr: 'CHN',
   },
 ];
 
