@@ -1,12 +1,12 @@
 <template>
-<v-content>
+<v-main>
    <error-log v-if="errors" :errors="errors"></error-log>
     <transition name="fade-transform" mode="out-in">
         <keep-alive>
             <router-view />
         </keep-alive>
     </transition>
-</v-content>
+</v-main>
 </template>
 
 <script>

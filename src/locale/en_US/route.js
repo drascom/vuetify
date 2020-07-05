@@ -3,7 +3,8 @@ export default {
   customerPage:{
     list:'All Customers',
     detail:'Customer Profile',
-    visits:'Customer Visit Detail'
+    visits: 'Customer Visit Detail',
+    gallery:'Customer Photos',
   },
   dashboard: 'Dashboard',
   // introduction: 'Introduction',

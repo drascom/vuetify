@@ -29,7 +29,7 @@ export default {
       this.fab = top > 300;
     },
     toTop() {
-      this.$router.push({ hash: '' });
+      this.$router.push({ hash: 'top'});
       this.$vuetify.goTo(0);
     },
   },

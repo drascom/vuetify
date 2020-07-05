@@ -1,6 +1,5 @@
 <template>
 <v-app-bar app>
-
      <v-app-bar-nav-icon v-if="!searchBar" @click.stop="toggleNavbar">
         <v-icon>{{ toggleNavbarIcon }}</v-icon>
     </v-app-bar-nav-icon>
@@ -15,8 +14,6 @@
     <full-screen v-if="!searchBar" />
     <notification v-if="!searchBar" />
     <profile v-if="!searchBar" />
-
-
 </v-app-bar>
 </template>
 

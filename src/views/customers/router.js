@@ -19,10 +19,16 @@ const customerRouter = [
         meta: { title: 'route.customerPage.list' },
       },
       {
-        path: 'detail',
+        path: 'detail/:id',
         component: () => import('@/views/customers/Detail'),
         name: 'CustomerDetail',
         meta: { title: 'route.customerPage.detail' },
+      },
+      {
+        path: 'gallery/:id',
+        component: () => import('@/views/customers/Gallery'),
+        name: 'Gallery',
+        meta: { title: 'route.customerPage.gallery' },
       },
     ],
   },
