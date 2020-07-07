@@ -104,7 +104,7 @@
                             </v-row>
                         </v-list-item-content>
                     </v-list-item>
-                    <v-btn class="ma-2" color="secondary darken 1" block elevation="4">More Details
+                    <v-btn class="ma-2" color="secondary darken 1" block elevation="4" @click="goToVisit(item.id)">More Details
                     <v-icon dark right>mdi-chevron-right</v-icon>
                 </v-btn>
                 </v-list>
@@ -214,7 +214,12 @@ export default {
             default: () => [],
             required: true
         }
-    }
+    },
+    methods: {
+        	goToVisit(id) {
+			this.$router.push("/customers/detail/" + id);
+		}            
+        }
 };
 </script>
 

@@ -24,7 +24,9 @@
 			<v-row key="2" class="d-flex align-stretch mb-5">
 				<v-col cols="12" md="4">
 					<information :customer="customer" />
-					<photos :photos="customer.photos" @click="goToPhotos" />
+					<a style="text-decoration-none"  @click="goToPhotos">
+					<photos :photos="customer.photos" />
+				</a>
 				</v-col>
 				<v-col cols="12" md="8">
 					<visits :visits="customer.visits" />
