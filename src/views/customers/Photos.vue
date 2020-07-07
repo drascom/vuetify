@@ -1,7 +1,7 @@
 <template>
-	<v-card>
 		<v-container fluid>
 			<v-row>
+                  <v-card-title>Customer Photo Gallery</v-card-title>
 				<v-col v-for="photo,index in photos" :key="index" class="d-flex child-flex" cols="4">
 					<v-card flat tile class="d-flex">
 						<v-img :src="photo.thumbnail" :lazy-src="photo.src" aspect-ratio="1" class="grey lighten-2">
@@ -15,7 +15,6 @@
 				</v-col>
 			</v-row>
 		</v-container>
-	</v-card>
 </template>
 
 <script>
