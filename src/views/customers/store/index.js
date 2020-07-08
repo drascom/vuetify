@@ -53,13 +53,21 @@ const moduleData = {
           doctor: "Dr. Ayhan COLAK",
           treatment: "Saç Ekim",
           estimated_graft: "2800",
-          estimated_price: "3000 Euro",
+          estimated_price: "3000 Euros",
+          deposits:'300 Euros',
           grafts_total: "3500",
           department: "Anadolu Hastanesi",
           current_price: "2900 Euro",
           status: "Completed",
           status_color: "success",
           notes: "Notes About this visit",
+          arrival_date:'02-02-2020',
+          departure_date: '05-02-2020',
+          arrival_time: '08:30',
+          departure_time: '03:30',
+          arrival_flight: 'KK-150',
+          departure_flight: 'PGS-13',
+
           seans: {
             "11": {
               id: "11",

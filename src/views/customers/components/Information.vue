@@ -2,10 +2,13 @@
 	<v-card class="mx-auto mb-4" color="white" tile>
 		<v-list rounded>
 			<v-subheader>Information</v-subheader>
-			<v-list-item-group v-model="customer" color="primary">
+			<v-list-item-group color="primary">
 				<v-list-item>
 					<v-list-item-content>
-						<v-textarea readonly name="input-7-1" label="Personal note" :value="customer.note" hint="Personal note"></v-textarea>
+						<v-card class="mx-auto p-2 border">
+               <div class="overline mb-4">Personal Note</div>
+             <v-card-text class="headline">{{ customer.note }}</v-card-text>
+            </v-card>
 					</v-list-item-content>
 				</v-list-item>
 

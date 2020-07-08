@@ -1,0 +1,249 @@
+https://www.merchantmaverick.com/quick-guide-accounting-terms-concepts/
+
+
+
+
+Hesaplar
+Bunlar, nakit veya kredi içerenler gibi belirli işlemlerin kaydedileceği yerlerdir. Hesaplar genellikle beş kategoriye ayrılır: varlıklar, borçlar, özkaynak, gelir veya giderler.
+
+Ayrıca bkz: Hesap Planı .
+
+Ödenebilir hesaplar
+İşletmeniz kredi ile bir ürün veya hizmet satın aldığında ve henüz ödemediğinde, gider ödenebilir hesaplar altında kaydedilir.
+
+Ayrıca bkz: Alacak Hesapları .
+
+Alacak hesapları
+İşletmeniz bir ürün veya hizmet teslim ettiğinde , ancak alıcınız bunun için henüz ödeme yapmadığında, alacak hesapları altında kaydedilir.
+
+Ayrıca bkz: Borçlu Hesaplar .
+
+Tahakkuk esaslı Muhasebe
+Bir işletme, ürünler / hizmetler gerçekleştiğinde veya üzerinde mutabık kalındığında gelir kaydeder. 10 Mayıs'ta bir fatura gönderir ve 10 Haziran'da ödenir, ancak Mayıs ayındaki ödemeyi sayarsanız, tahakkuk esaslı muhasebe kullanıyorsunuz demektir.
+
+Ayrıca bakınız: Nakit Temelli Muhasebe .
+
+amortisman
+Bir kredinin, maddi olmayan duran varlığın veya diğer borçların maliyetini kademeli olarak ve periyodik olarak azaltmak için kullanılan bir teknik.
+
+Varlıklar
+İşletmenizin sahip olduğu her şey (nakit, envanter, ekipman).
+
+Dönen Varlıklar
+Nakitten kısa vadeli varlıklar ile mali yıl içinde nakit olacak diğer varlıklar (stok veya alacak hesapları gibi).
+
+Duran Varlıklar
+Tek bir mali yılda kullanılmayacak uzun vadeli ömrü olan varlıklar (mülk, ekipman, şirket aracı vb.).
+
+Ayrıca bakınız: Eşitlik , Yükümlülükler .
+
+Denetim
+İşletmenizin muhasebe kayıtlarının ve fiziksel varlıklarının incelenmesi, çünkü bir hata veya tutarsızlığın var olduğuna ve doğrulanması gerektiğine inandığınızdan.
+
+Bilanço
+Muhasebe denkleminin her iki tarafının da eşleştiğinden emin olmak için varlıkları, borçları ve özkaynakları hesaplayan bir muhasebe raporu.
+
+Ayrıca bkz: Muhasebe Denklemi .
+
+Muhasebeci
+İşletmenizin kitaplarının bakımını yapmakla görevli biri. İşletmenin finansmanını günlük olarak ele alırlar.
+
+Ayrıca bakınız: Muhasebeci , EBM .
+
+defter tutma
+Hesapları, finansal işlemleri ve işletmenizle ilgili diğer bilgileri kaydetme eylemi.
+
+Başkent
+İşletmenizin sahip olduğu finansal varlıklar, parasal fonların yanı sıra üretim ekipmanı veya binalar gibi fiziksel varlıkları da içerebilir.
+
+Ayrıca bakınız: Tasfiye , Ödeme Gücü .
+
+Nakit akımı
+İşinize girip çıkan para. İşinize giren para genellikle müşteri ödemeleri yoluyla gelir. Para çıkışı genellikle kiradan vergilere ve kredi geri ödemelerine kadar yaptığınız ödemeleri içerir.
+
+Ayrıca bkz: Nakit Akışı Tablosu .
+
+Nakit Akışı Tablosu
+Bu finansal tablo, belirli bir zaman diliminde bir işletmenin giriş ve çıkış nakitlerinin bir özetini sunar.
+
+Ayrıca bakınız: Nakit Akışı .
+
+Nakit Temelli Muhasebe
+Bir işletme, ürünler / hizmetler için ödeme yapıldığında gelir kaydeder. 10 Mayıs'ta bir fatura gönderirseniz, 10 Haziran'da ödeme alır ve bu parayı Haziran için sayarsanız, nakit tabanlı muhasebe kullanıyorsunuz demektir.
+
+Ayrıca bakınız: Tahakkuk Muhasebesi .
+
+Hesap tablosu
+Genel hesapta kullanılan tüm hesapları listeleyen bir rapor. Bu grafik hesaplardan oluştuğu için, genellikle beş kategori görürsünüz: varlıklar, borçlar, özsermaye, gelir ve giderler. Çoğu durumda, rapor hesap numarasına göre sıralanır.
+
+Bir hesap planı, finansal bilgileri düzenlemenin bir yolunu sunar, ancak ilk başta başa çıkmak biraz zor olabilir. İşletmenizi bir hesap planı ile nasıl kuracağınızı merak ediyorsanız kılavuzumuzu ziyaret edin .
+
+Ayrıca bakınız: Hesaplar , Defteri Kebir .
+
+Bulut Tabanlı
+Bu terimi bulut yazılımı ile birlikte görebilirsiniz. Bir şey “bulut tabanlı” ise, genellikle internet üzerinden erişilir ve uzak sunucularda barındırılır.
+
+Bulut tabanlı muhasebe, kullanım kolaylığı ve erişilebilirliği nedeniyle küçük işletme sahipleri için popüler bir seçenek haline geliyor. Öğrenin bizim derinlemesine makalesinde işiniz için uygun olup olmadığını.
+
+Ayrıca bkz: Yerel olarak Yüklü , SaaS .
+
+SMM
+Satılan malın maliyeti. Bu kısaltma, sattığınız ürün veya hizmetlerin yapımı veya montajı ile ilgili her türlü maliyeti ifade eder. Genel olarak, toplam, envanter ve işçilik için harcadığınız tutar toplanarak hesaplanır.
+
+Ayrıca bakınız: Brüt Kar , Kar ve Zarar Raporu .
+
+Hesaplara Karşı
+Bu hesaplar genel bir defterde kullanılır ve ilgili bir hesap için normal bakiyenin karşısında bir bakiye ile birlikte gelir. İlgili hesabın bir borcu varsa, karşı hesap bir kredi kaydeder. Muhasebe yazılımınızın tüm bunları sahne arkasında ele alacağını unutmayın, bu yüzden vahşi doğada kontra hesaplarla temasa geçmeyeceksiniz.
+
+Ayrıca bakınız: Defteri Kebir .
+
+EBM
+Serbest muhasebeci mali müşavir. EBM yeterliliği olanlar normal muhasebecilere göre daha fazla güvenilirliğe ve uzmanlığa sahiptir. Bir EBM, denetim ve inceleme raporları oluşturabilir ve ayrıca işinizi IRS önünde yasal olarak temsil edebilir - normal bir muhasebecinin yapamayacağı iki şey.
+
+Ayrıca bakınız: Muhasebeci , Muhasebeci .
+
+Amortisman
+Bu terim, bir varlığın kullanım süresi boyunca değer kaybına bakar. Zamanla değeri azalan araçlara, üretim ekipmanına veya diğer fiziksel varlıklara bakarken genellikle amortismanı göz önünde bulundurursunuz. Amortisman, belirli bir varlığın başlangıç ​​değerinden ne kadar amortismana tabi tutulduğunu hesaplayarak (tüm gideri bir defada yazmak yerine) vergi indirimi olarak kullanılabilir .
+
+Çift Giriş Muhasebesi
+Her işlemin hem kredi hem de borç olarak en az iki kez kaydedildiği bir muhasebe türü. Bu muhasebe türü uzmanlar tarafından tercih edilir ve işletmenizin finansal sağlığının net bir resmini verir. Daha fazla bilgi edinmek için Çift Girişli Rezervasyon Nedir (ve İhtiyacınız Var mı?) Makalemizi okuyun. .
+
+Kredi
+Bu kavramı anlamak için, kredi ve borç bilgilerinizi bir dakika boyunca askıya almanız gerekir. Kesin muhasebe koşullarında, borçları (veya borcu) artıran ve varlık veya giderleri azaltan herhangi bir işleme kredi denir. (Hemen hemen tüm bulut tabanlı yazılımlar sizin için otomatik olarak çift giriş hesaplamaları yapar, ancak kavram hala anlaşılması iyidir.)
+
+Borçlar
+Öte yandan, borçlar varlıkları veya giderleri arttırır ve borçları azaltır . Temel muhasebe denklemi varlıkları = borçlar + özkaynakları hatırlıyor musunuz? Bu denklem, tüm çift girişli muhasebenin temelidir, çünkü her işlem borç ve alacak olarak kaydedilir, yani denklemin her iki tarafı da her zaman dengeli ve eşit kalır. Aslında bu, kitapların dengesini ifade ettiğimiz yerdir .
+
+İşte iyi bir örnek. Diyelim ki fırıncısın. 35 lezzetli elmalı turta yapmak için 350 $ malzeme (un, elma, tuz, şeker, tarçın) satın alırsınız. Yum! Şimdi, 350 $ harcadınız - nakit varlıklarınızı azalttınız - bu tutarı kredi tarafında girersiniz. Fakat bekle! Ayrıca varlıklarınızı envanter şeklinde de artırdınız. Tamam, borç tarafına bir giriş yapın. Bir bölgede 350 dolar kaybettin ve başka bir alanda geri kazandın. Boom! Kitaplarınızı dengeli düşünün. Bu elbette temel bir örnektir, bu yüzden hala bu kavramı kafa karıştırıcı buluyorsanız, başka bir açıklama için bu videoya göz atın.
+
+hesap	borç	Kredi
+Varlık: Nakit		$350
+Varlık envanteri	$350	
+Toplam	$350	$350
+Ayrıca bkz: Tek Girişli Muhasebe .
+
+Eşitlik
+Eşitlik, bir işletmenin değerini veya sahibinin o işletmeye yaptığı yatırımın değerini ifade eder. Bir işletme sahibinin şirkete yatırım yaptığı varlıklar olduğunda, yatırımının değerini temel muhasebe denklemini kullanarak hesaplayabilirsiniz: varlıklar = özkaynak + yükümlülükler veya varlıklar - yükümlülükler = özkaynak .
+
+Ayrıca bakınız: Varlıklar , Yükümlülükler .
+
+ERP
+Kurumsal kaynak planlaması. Bu, işletmenizin önemli kısımlarını yönetmenize ve birleştirmenize yardımcı olacak bir süreçtir. Genellikle planlama, insan kaynakları ve rapor oluşturma, fatura ödeme veya banka mutabakatı gibi hesap görevlerini entegre edebilen bir yazılıma bağlı olduğunu görürsünüz.
+
+Eklemekte içine arıyorsanız ERP yazılımını iş cephanelik kullanmak Tüccar Maverick değerlendirme değerinde Perusing bir çift vardır:
+
+NetSuite
+Odoo Muhasebe
+ERP'lere daha derin bir dalış yapmak mı istiyorsunuz? Sizi de orada ele geçirdik .
+
+Tahmin
+Kesin değerin belirlenemediği bir finansal işlemin hesaplanması. Tahminler genellikle uzman görüşü, arka plan bilgisi ve geçmiş verilerine dayanarak yapılır.
+
+Ayrıca bakınız: Fatura , Teklif , Teklif .
+
+Masraflar
+İşinizi yürütme maliyetleri.
+
+Defteri Kebir
+Tüm muhasebe raporlarının temeli. Tüm finansal işlemleri izler.
+
+Brüt kar
+İşletmenizin satışlardan elde ettiği gelir, eksi COGS. Bu sayı, işletmenizin sağlığını belirlemeye yardımcı olmak için kullanılabilir. Genellikle şirketinizin gelir tablosunda brüt kâr ve hemen hemen her türlü ticari vergi formunu görürsünüz.
+
+Ayrıca bakınız: Net Kâr , Gelir .
+
+Fatura
+Fiyat ve satış koşullarını detaylandıran oluşturulmuş mal veya hizmetlerin ayrıntılı bir listesi. Satıcı tarafından alıcıya gönderilir.
+
+Ayrıca bakınız: Tahmin , Net 30 , Teklif , Alıntı .
+
+İş Maliyetleme
+Müşterileriniz için gerçekleştirilen her işin maliyetlerini ve karlılığını hesapladığınız bir yöntem. İş maliyetleme, bir hizmet sunmayla ilişkili tüm maliyetleri dikkate alır ve müşteriye özgü bir hizmet veya ürünün maliyetini hesaplarken kullanılır. Daha fazla ayrıntı için iş maliyetlendirmesine derinlemesine bakın .
+
+Günlük girişleri
+Bunları ticari işlemleri kaydetmek ve bir işlemden etkilenen tüm ilgili hesapları düzenlemek için kullanabilirsiniz. Defteri kebir raporunda dergi kayıtları yapacaksınız; ancak dergi kayıtlarının kendileri bir rapor olmak zorunda değildir. Derginin kendisi kronolojik olarak sıralanmıştır.
+
+Ayrıca bakınız: Defteri Kebir .
+
+Yükümlülükler
+İşletme borçları.
+
+Ayrıca bakınız: Varlıklar , Eşitlik .
+
+Tasfiye
+Borçları ödemek için varlıkları nakde çevirerek bir işletmeyi feshetme eylemi.
+
+Ayrıca bakınız: Sermaye , Ödeme Gücü .
+
+Yerel-Yüklü
+Yerel olarak yüklenmiş bir yazılımınız varsa, program yerel bilgisayarınızın, tabletinizin veya telefonunuzun sabit sürücüsüne yüklenir. Bu, bir web tarayıcısı üzerinden eriştiğiniz bulut tabanlı bir uygulama ile tezat oluşturur. Yerel olarak yüklenmiş yazılımların yine de internet erişimi gerektirebileceğini unutmayın (ürününüzün lisansını doğrulama gibi).
+
+Ayrıca bkz: Bulut Tabanlı , SaaS .
+
+Net 30
+Bir müşterinin son ödeme tarihinden önce bir fatura ödemek zorunda kaldığı süre (burada, 30 gün). Saat, faturanın gönderildiği tarihi işaretlemeye başlar. Ayrıca, "Net 15" veya "Net 10" ifadesini de görebilirsiniz. Bu, müşterinin sırasıyla 15 veya 10 gün içinde ödeme yapması gerektiği anlamına gelir.
+
+Faturalarda son tarihler belirleyerek müşterilerinizin daha hızlı ödeme yapma olasılıkları daha yüksek olabilir. Yavaş ödeme yapan müşterilerle sorun yaşıyorsanız, Merchant Maverick'in faturaların daha hızlı ödenmesi için ipuçlarına göz atın .
+
+Ayrıca bkz: Fatura .
+
+Net kazanç
+İşletmenizin brüt kârı eksi vergiler, faiz, amortisman ve diğer çeşitli giderler. Net karın satış yoluyla tüm faaliyet giderlerini gelirinizden çıkardığını unutmayın. İşletmenizin gerçek karı bu. Brüt kar, işinizin sağlığını ölçerken, net kar sadece kârlılığını ölçer.
+
+Ayrıca bakınız: Brüt Kar , Gelir .
+
+Kar ve Zarar Raporu
+COGS'yi gelirden çıkararak bir işletmenin kârını hesaplayan bir muhasebe raporu.
+
+Ayrıca bakınız: COGS .
+
+öneri
+Potansiyel bir müşteri veya satıcı tarafından mal veya hizmet almayı veya satmayı teklif eden bir sunum.
+
+Ayrıca bakınız: Tahmin , Fatura , Alıntı .
+
+Satın alma emri
+Bir satıcı / tedarikçiden mal ve / veya hizmet sağlamasını isteyen bir alıcı tarafından sunulan ticari belge.
+
+Ayrıca bkz: Müşteri Siparişi .
+
+Quote
+Satıcı veya tedarikçi tarafından, mallar veya hizmetler için önerilen fiyatların bir listesini gösteren bir belge. Teklifler, belirli bir müşterinin bireysel ihtiyaçlarına göre oluşturulabilir.
+
+Ayrıca bkz: Tahmin , Fatura , Teklif .
+
+Mutabakat
+İki sayıyı karşılaştırma (genellikle hesap bakiyeleri veya diğer finansal kayıtlar) ve her şeyin sıraya girmesini sağlama eylemi. Hesaplarınızı eşitlemek, hataları, sahtekarlığı veya kitaplarınızdaki diğer sorunları tespit etmenize yardımcı olabilir.
+
+gelir
+Şirketiniz tarafından kazanılan kâr (genellikle satış yoluyla).
+
+Ayrıca bakınız: Brüt Kar , Net Kar .
+
+KRAL
+Yatırım getirisi. YG yüzde olarak ifade edilir ve bu denklemle hesaplanır: YG = (yatırım kazancı - yatırım maliyeti) / yatırım maliyeti . Bu formül, kazanılan veya kaybedilen kârı göstererek yatırımınızın ne kadar başarılı olduğunu gösterir.
+
+SaaS
+Hizmet olarak yazılım. Kullanıcıların yazılımı doğrudan satın almadığı, ancak yazılım hizmetine sürekli olarak erişmek için abonelik ödediği bir iş modeli. Bu ödemeler genellikle aylıktır ve yazılım genellikle bulut tabanlıdır.
+
+Ayrıca bkz: Bulut Tabanlı , Yerel Yüklü .
+
+Müşteri Siparişi
+Bir satıcı tarafından yazılan ve müşterinin satınalma siparişini aldıktan sonra gönderilen belge. Esasen mal veya hizmet satışını onaylar.
+
+Ayrıca bkz: Satın Alma Siparişi .
+
+Tek Girişli Muhasebe
+Yalnızca gelir ve gider hesaplarını kaydeden bir muhasebe türü. Bu, çift girişli muhasebeden daha basittir, ancak şirketiniz hakkında daha az eksiksiz bir görünüm sağlar.
+
+Ayrıca bkz: Çift Girişli Muhasebe .
+
+ödeme gücü
+İşletmenizin uzun vadeli borçlar ve finansal yükümlülükler ödeme yeteneği.
+
+Ayrıca bakınız: Sermaye , Tasfiye .
+
+Geçici mizan
+Hesap planında bulunan tüm hesapların bakiyelerinin listesi. Bu rapor ayrıca toplam borçlarınızı ve toplam kredilerinizi de içerir. Deneme dengesi içindeki sayılar eşleşmelidir; eğer yapmazlarsa, kitaplarınız dengelenmez.
+
+Ayrıca bakınız: Bilanço , Hesap Planı .

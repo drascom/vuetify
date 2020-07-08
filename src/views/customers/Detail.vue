@@ -24,10 +24,14 @@
 			<v-row key="2" class="d-flex align-stretch mb-5">
 				<v-col cols="12" md="4">
 					<information :customer="customer" />
-				<a href=""><photos :photos="customer.photos" /></a>
+					<a class="text-decoration-none" @click="goToPhotos">
+						<photos :photos="customer.photos" />
+					</a>
 				</v-col>
-				<v-col cols="12" md="8">
+				<v-col cols="12" md="8" style="height: 100%; ">
 					<visits :visits="customer.visits" />
+					<v-divider></v-divider>
+
 				</v-col>
 			</v-row>
 		</v-container>
@@ -37,16 +41,18 @@
 <script>
 import { mapGetters } from "vuex";
 import moduleData from "./store/index";
-import Visits from "./VisitsList.vue";
-import Information from "./Information.vue";
-import Photos from "./Photos.vue";
+import Information from "./components/Information.vue";
+import Photos from "./components/Photos.vue";
+import Visits from "./components/Visits.vue";
+import Balance from "./components/Balance.vue";
 
 export default {
 	name: "CustomerDetail",
 	components: {
 		Visits,
 		Information,
-		Photos
+		Photos,
+		Balance
 	},
 	beforeCreate() {
 		if (!moduleData.isRegistered) {
@@ -67,7 +73,7 @@ export default {
 	},
 	methods: {
 		goToPhotos() {
-			this.$router.push("/customer/photos/" + this.userid);
+			this.$router.push("/customers/gallery/" + this.customer.id);
 		}
 	}
 };

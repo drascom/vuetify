@@ -14,7 +14,7 @@ const customerRouter = [
     children: [
       {
         path: 'list',
-        component: () => import('@/views/customers/List.vue'),
+        component: () => import('@/views/customers/List'),
         name: 'CustomerList',
         meta: { title: 'route.customerPage.list' },
       },
