@@ -2,7 +2,7 @@
 	<v-card class="" color="primary lighten-3">
 		<v-card-title class="headline"> All Visits</v-card-title>
 
-		<v-expansion-panels hover focusable accordion>
+		<v-expansion-panels hover focusable inset active-class tile>
 			<v-expansion-panel readonly>
 				<v-expansion-panel-header color="grey lighten-4">
 					<v-row no-gutters class="d-flex justify-start align-center text-uppercase font-weight-bold">
@@ -46,7 +46,7 @@
 					</template>
 				</v-expansion-panel-header>
 				<v-expansion-panel-content color="" elevation="6" class="px-0">
-          <visit :item="item"/>
+					<visit :item="item" />
 				</v-expansion-panel-content>
 			</v-expansion-panel>
 		</v-expansion-panels>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import visit from './visit.vue';
+import visit from "./visit.vue";
 export default {
 	name: "VisitsList",
 	props: {
@@ -63,10 +63,10 @@ export default {
 			default: () => [],
 			required: true
 		}
-  },
-  components: {
-    visit,
-  },
+	},
+	components: {
+		visit
+	}
 };
 </script>
 
