@@ -1,8 +1,7 @@
 <template>
 	<v-card class="" color="primary lighten-3">
 		<v-card-title class="headline"> All Visits</v-card-title>
-
-		<v-expansion-panels hover focusable inset active-class tile>
+		<v-expansion-panels hover focusable active-class tile accordion @change="panelClick($event)">
 			<v-expansion-panel readonly>
 				<v-expansion-panel-header color="grey lighten-4">
 					<v-row no-gutters class="d-flex justify-start align-center text-uppercase font-weight-bold">
@@ -21,7 +20,7 @@
 					</v-row>
 				</v-expansion-panel-header>
 			</v-expansion-panel>
-			<v-expansion-panel focusable v-for="(item,index) in visits" :key="index">
+			<v-expansion-panel focusable  v-for="(item,index) in visits" :key="index">
 				<v-expansion-panel-header>
 					<v-row no-gutters class="d-flex justify-start align-center text-subtitle-2 text-sm-body-1 text-md-button">
 						<v-col cols="4" sm="3" class="">
@@ -66,6 +65,12 @@ export default {
 	},
 	components: {
 		visit
+	},
+	methods: {
+		panelClick(event) {
+			console.log("panel click event ", event);
+			this.$emit("panelOpen", event);
+		}
 	}
 };
 </script>
