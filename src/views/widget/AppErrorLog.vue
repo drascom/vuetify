@@ -23,7 +23,7 @@ export default {
 	created() {
 		setTimeout(() => {
 			this.alert = false;
-		}, 3000);
+		}, 1000);
 	}
 };
 </script>

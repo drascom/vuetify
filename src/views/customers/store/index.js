@@ -69,12 +69,24 @@ const moduleData = {
           departure_time: '03:30',
           arrival_flight: 'KK-150',
           departure_flight: 'PGS-13',
+          surgery_note:'Donor area is too weak.2nd surgery not possible.grafts are too small',
+          sales: {
+            "1": {
+              "id": 1,
+              "date": "03-02-2020",
+              "type":""
+            }
+          },
 
           seans: {
             "11": {
               id: "11",
               date: "11-11-2011",
-              grafts: "2000"
+              grafts: "2000",
+              stuff: {
+                'Aslı': 'Alım Yaptı',
+                'HAtice':'Katıldı'
+              },
             },
             "33": {
               id: "33",
@@ -89,13 +101,23 @@ const moduleData = {
           date: "01-01-2019",
           doctor: "Dr. Ayhan COLAK",
           treatment: "Saç Ekimi",
-          estimated_graft: "3000",
-          estimated_price: "2800",
-          department: "Ederra Poliklinik",
-          current_price: "2500",
-          status: "Waiting Payment",
+          estimated_grafts: "2800",
+          current_grafts: "2800",
+          estimated_price: "3000 Euros",
+          current_price: "3000 Euros",
+          payment_type: 'Cash',
+          deposits: '0 Euros',
+          department: "Anadolu Hastanesi",
+          current_price: "3400 Euro",
+          status: "Not Confirmed",
           status_color: "warning",
           notes: "Notes About this visit",
+          arrival_date: '02-02-2020',
+          departure_date: '05-02-2020',
+          arrival_time: '08:30',
+          departure_time: '03:30',
+          arrival_flight: 'KK-150',
+          departure_flight: 'PGS-13',
           seans: {
             "22": {
               id: "22",

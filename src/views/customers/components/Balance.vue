@@ -1,36 +1,60 @@
 <template>
-  <v-data-table dense :headers="headers" :items="desserts" item-key="name" class="elevation-1"></v-data-table>
+<div >
+    <v-card class="mx-auto">
+        <v-card-title>
+            Details
+        </v-card-title>
+        <v-data-table :headers="headers" :items="desserts" item-key="name" class="elevation-1" />
+    </v-card>
+</div>
 </template>
 
 <script>
-  export default {
+export default {
     data: () => ({
-      desserts: [
-        {
-          type: 'sell',
-          title: 'Treatment',
-          amount: 2000,
-          status: 'prepared',
-        },
-        {
-          type: 'sell',
-          title: 'invoice',
-          amount: 100,
-          status: 'confirmed',
-        },
+        desserts: [{
+                type: 'Sell',
+                title: 'Treatment',
+                amount: 3400,
+                currency: 'Euro',
+                status: 'Charged',
+            },
+            {
+                type: 'Buy',
+                title: 'Comission',
+                amount: 1122,
+                currency: 'Euro',
+                status: 'Not Payed',
+            },
 
-      ],
-      headers: [
-        {
-          text: 'Type',
-          align: 'start',
-          sortable: false,
-          value: 'type',
-        },
-        { text: 'Title', value: 'title' },
-        { text: 'Amonut ', value: 'amount' },
-        { text: 'Status (g)', value: 'status' },
-      ],
+        ],
+        headers: [{
+                text: 'Type',
+                align: 'start',
+                sortable: false,
+                value: 'type',
+            },
+            {
+                text: 'Title',
+                sortable: false,
+                value: 'title'
+            },
+            {
+                text: 'Amonut ',
+                sortable: false,
+                value: 'amount'
+            },
+            {
+                text: 'Currency ',
+                sortable: false,
+                value: 'currency'
+            },
+            {
+                text: 'Status (g)',
+                sortable: false,
+                value: 'status'
+            },
+        ],
     }),
-  }
+}
 </script>

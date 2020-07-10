@@ -1,6 +1,13 @@
 <template>
 	<v-card class="mx-auto mb-4" color="white" tile>
-		<v-list rounded>
+		<v-list >
+       <v-btn
+              absolute
+              fab
+              right
+              color="accent">
+              <v-icon>mdi-pencil</v-icon>
+            </v-btn>
 			<v-subheader>Information</v-subheader>
 			<v-list-item-group color="primary">
 				<v-list-item>
