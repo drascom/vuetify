@@ -1,21 +1,17 @@
 <template>
 	<v-card class="mx-auto mb-4" color="white" tile>
-		<v-list >
-       <v-btn
-              absolute
-              fab
-              right
-              color="accent">
-              <v-icon>mdi-pencil</v-icon>
-            </v-btn>
+		<v-list>
+			<v-btn absolute fab right color="accent">
+				<v-icon>mdi-pencil</v-icon>
+			</v-btn>
 			<v-subheader>Information</v-subheader>
 			<v-list-item-group color="primary">
 				<v-list-item>
 					<v-list-item-content>
 						<v-card class="mx-auto p-2 border">
-               <div class="overline mb-4">Personal Note</div>
-             <v-card-text class="headline">{{ customer.note }}</v-card-text>
-            </v-card>
+							<div class="overline mb-4">Personal Note</div>
+							<v-card-text class="headline">{{ customer.note }}</v-card-text>
+						</v-card>
 					</v-list-item-content>
 				</v-list-item>
 
@@ -80,7 +76,7 @@
 
 <script>
 export default {
-	name: "cutomerInformation",
+	name: "customerInformation",
 	props: {
 		customer: {
 			type: Object,

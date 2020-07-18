@@ -36,13 +36,9 @@ import moduleData from "./store/index";
 export default {
 	name: "customerGalleryView",
 	beforeCreate() {
-		console.log("module data: ", moduleData.isRegistered);
 		if (!moduleData.isRegistered) {
-			console.log("customer module not registered ");
 			this.$store.registerModule("customers", moduleData);
 			moduleData.isRegistered = true;
-			console.log("module data: ", moduleData.isRegistered);
-			console.log("customer module registered now ");
 		}
 		console.log("customer module already registered ");
 	},

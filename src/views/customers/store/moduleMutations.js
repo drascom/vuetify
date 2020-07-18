@@ -1,5 +1,8 @@
 
 export default {
+  SET_CUSTOMER ( state, payload ) {
+    state.customer=payload
+  },
   ADD_ITEM (state, item) {
     state.customers.unshift(item)
   },

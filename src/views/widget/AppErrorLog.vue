@@ -1,8 +1,6 @@
 <template>
 	<v-card v-if="errors">
-		<v-alert :value="alert" dense dismissible outlined transition="scale-transition" close-icon="mdi-delete" type="info" v-for="(error,index) in errors" :key="index">
-			{{error}}
-		</v-alert>
+           <v-sheet v-if="alert" transition="scale-transition" color="orange lighten-2" v-for="(error,index) in errors" :key="index">	{{error}}</v-sheet>
 	</v-card>
 </template>
 

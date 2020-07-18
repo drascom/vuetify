@@ -19,18 +19,19 @@
 				</v-card>
 			</v-fade-transition>
 			<v-row key="2" class="d-flex">
-					<v-col v-show="!showInfoPanel" cols="12" :md="!showInfoPanel?'4':'0'" key="1">
-						<div key="1">
-							<information :customer="customer" />
-							<a class="text-decoration-none" @click="goToPhotos">
-								<photos :photos="customer.photos" />
-							</a>
-						</div>
-					</v-col>
+				<v-col v-show="!showInfoPanel" cols="12" :md="!showInfoPanel?'4':'0'" key="1">
+					<div key="1">
+						<information :customer="customer" />
+						<a class="text-decoration-none" @click="goToPhotos">
+							<photos :photos="customer.photos" />
+						</a>
+					</div>
+				</v-col>
 				<transition name="fade">
-				<v-col cols="12" :md="!showInfoPanel?'8':'12'" key="2">
-					<visits :visits="customer.visits" @panelOpen="showInfoPanel=$event" />
-				</v-col>	</transition>
+					<v-col cols="12" :md="!showInfoPanel?'8':'12'" key="2">
+						<visits :visitList="customer.visits" @panelOpen="showInfoPanel=$event" />
+					</v-col>
+				</transition>
 			</v-row>
 		</v-container>
 	</div>
@@ -42,7 +43,6 @@ import moduleData from "./store/index";
 import Information from "./components/Information.vue";
 import Photos from "./components/Photos.vue";
 import Visits from "./components/Visits.vue";
-import Balance from "./components/Balance.vue";
 
 export default {
 	name: "CustomerDetail",
@@ -50,7 +50,6 @@ export default {
 		Visits,
 		Information,
 		Photos,
-		Balance
 	},
 	beforeCreate() {
 		if (!moduleData.isRegistered) {

@@ -5,6 +5,6 @@ export default {
                avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
            },
        ],
- item: {},
+ customer: {},
  customerPhotos: []
 };

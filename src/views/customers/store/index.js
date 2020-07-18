@@ -13,7 +13,7 @@ const moduleData = {
       country: "Russia",
       recordedBy: "Kristina",
       status:'1'
-    },
+      },
       {
         id: 2,
         active: false,
@@ -69,7 +69,14 @@ const moduleData = {
           departure_time: '03:30',
           arrival_flight: 'KK-150',
           departure_flight: 'PGS-13',
-          surgery_note:'Donor area is too weak.2nd surgery not possible.grafts are too small',
+          surgery_note: 'Donor area is too weak.2nd surgery not possible.grafts are too small',
+          progress: {
+            arrived: false,
+            charged: false,
+            operated: false,
+            checked: false,
+            departed:false,
+          },
           sales: {
             "1": {
               "id": 1,
@@ -162,8 +169,88 @@ const moduleData = {
         }
       ]
     },
+    activeVisit: {
+        id: "1",
+        type: 'Consultation',
+        date: "05-05-2010",
+        doctor: "Dr. Ayhan COLAK",
+        treatment: "Saç Ekim",
+        estimated_grafts: "2800",
+        current_grafts: "2800",
+        estimated_price: "3000 Euros",
+        current_price: "3000 Euros",
+        deposits: '300 Euros',
+        department: "Anadolu Hastanesi",
+        current_price: "2900 Euro",
+        notes: "Notes About this visit",
+        surgery_note: 'Donor area is too weak.2nd surgery not possible.grafts are too small',
+        overall_progress: {
+          status: "Completed",
+          status_color: "success",
+        },
+        progress_items: {
+          arrival: {
+            status: true,
+            items: {
+              arrival_date: '02-02-2020',
+              arrival_time: '08:30' ,
+              arrival_flight: 'KK-150'
+            },
+          },
+          payments: {
+            status: true,
+            items: [
+              {id:'1', date: '16-01-2020', type: 'deposit', amount: '300' },
+              {id:'2', date: '03-02-2020', type: 'Cash', amount: '2700' },
+            ],
+            total: '3000'
+          },
+          operation: {
+            status: true,
+            items: [
+              {
+              id: "11",
+              date: "11-11-2011",
+              single_hair_grafts: '100',
+              multiple_hair_grafts: '200',
+              beard_hair_grafts: '300',
+              body_hair_grafts: '400',
+              total_grafts: "2000",
+              stuff: {
+                'Aslı': 'Alım Yaptı',
+                'Htice': 'Katıldı'
+              },
+            },
+            {
+              id: "33",
+              date: "12-11-2011",
+              total_grafts: "1500"
+              }
+            ]
+          },
+          control: {
+            status: false,
+            items: {
+              photos: false,
+              washing: false,
+            }
+
+          },
+          departure: {
+            status: true,
+            items: {
+              departure_date: '05-02-2020',
+              departure_time: '03:30',
+              departure_flight: 'PGS-13',
+            }
+          },
+        },
+    },
   },
   getters: {
+    getVisit ( state ) {
+      return state.activeVisit
+    },
     getCustomersList ( state ) {
       return state.customersList
     },
@@ -175,6 +262,12 @@ const moduleData = {
     }
   },
   mutations: {
+    SET_VISIT ( state, payload ) {
+      state.activeVisit = payload
+    },
+    SET_CUSTOMER ( state, payload ) {
+      state.customer = payload
+    },
     ADD_ITEM ( state, item ) {
       state.customers.unshift( item )
     },
@@ -200,6 +293,10 @@ const moduleData = {
     }
   },
   actions: {
+    setVisit ( { commit }, payload ) {
+      commit( "SET_VISIT", payload );
+    },
+
     fetchCustomers ( { commit } ) {
       return new Promise( ( resolve, reject ) => {
         axios

@@ -4,7 +4,8 @@ export default {
     list:'All Customers',
     detail:'Customer Profile',
     visits: 'Customer Visit Detail',
-    gallery:'Customer Photos',
+    gallery: 'Customer Photos',
+    visitdetail:'Visit Detail Page'
   },
   dashboard: 'Dashboard',
   // introduction: 'Introduction',
