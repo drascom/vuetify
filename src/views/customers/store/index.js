@@ -182,69 +182,68 @@ const moduleData = {
         deposits: '300 Euros',
         department: "Anadolu Hastanesi",
         current_price: "2900 Euro",
-        notes: "Notes About this visit",
+        note: "Notes About this visit",
         surgery_note: 'Donor area is too weak.2nd surgery not possible.grafts are too small',
         overall_progress: {
           status: "Completed",
           status_color: "success",
         },
-        progress_items: {
-          arrival: {
-            status: true,
-            items: {
-              arrival_date: '02-02-2020',
-              arrival_time: '08:30' ,
-              arrival_flight: 'KK-150'
-            },
-          },
-          payments: {
-            status: true,
-            items: [
-              {id:'1', date: '16-01-2020', type: 'deposit', amount: '300' },
-              {id:'2', date: '03-02-2020', type: 'Cash', amount: '2700' },
-            ],
-            total: '3000'
-          },
-          operation: {
-            status: true,
-            items: [
-              {
-              id: "11",
-              date: "11-11-2011",
-              single_hair_grafts: '100',
-              multiple_hair_grafts: '200',
-              beard_hair_grafts: '300',
-              body_hair_grafts: '400',
-              total_grafts: "2000",
-              stuff: {
-                'Aslı': 'Alım Yaptı',
-                'Htice': 'Katıldı'
-              },
-            },
-            {
-              id: "33",
-              date: "12-11-2011",
-              total_grafts: "1500"
-              }
-            ]
-          },
-          control: {
-            status: false,
-            items: {
-              photos: false,
-              washing: false,
-            }
-
-          },
-          departure: {
-            status: true,
-            items: {
-              departure_date: '05-02-2020',
-              departure_time: '03:30',
-              departure_flight: 'PGS-13',
-            }
+        arrival: {
+          status: true,
+          items: {
+            arrival_date: '2020-07-15',
+            arrival_time: '08:30' ,
+            arrival_flight: 'KK-150'
           },
         },
+        payments: {
+          status: true,
+          items: [
+            {id:'1', date: '2020-07-16', type: 'Bank Transfer', amount: '300 Euros',note:'' },
+            {id:'2', date: '2020-07-16', type: 'Cash', amount: '2700 euros',note:'1000 euro , 2000 USD' },
+          ],
+          total: '3000'
+        },
+        operation: {
+          status: false,
+          items: [
+            {
+            id: "11",
+            date: "2020-07-16",
+            single_hair_grafts: '100',
+            multiple_hair_grafts: '200',
+            beard_hair_grafts: '300',
+            body_hair_grafts: '400',
+            total_grafts: "2000",
+            stuff: {
+              'Aslı': 'Alım Yaptı',
+              'Htice': 'Katıldı'
+            },
+          },
+          {
+            id: "33",
+            date: "2020-07-17",
+            total_grafts: "1500"
+            }
+          ]
+        },
+        control: {
+          status: false,
+          items: {
+            photos: false,
+            washing: false,
+          }
+
+        },
+        departure: {
+          status: false,
+          items: {
+            departure_date: '05-02-2020',
+            departure_time: '03:30',
+            departure_flight: 'PGS-13',
+          }
+        },
+
     },
   },
   getters: {

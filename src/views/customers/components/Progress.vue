@@ -3,212 +3,310 @@
     <v-row>
         <v-col cols="12" md="8">
             <v-timeline dense>
+                <v-slide-x-reverse-transition group hide-on-leave>
+                    <v-timeline-item
+                        icon="mdi-airplane-landing"
+                        :color="visit.arrival.status ? 'success':'error'"
+                        key="arrival"
+                        fill-dot
+                        right>
+                        <v-card>
+                            <v-list-group
+                                class=""
+                                no-action
+                                dense>
+                                <template v-slot:activator>
+                                    <v-list-item-title class="headline">Arrival</v-list-item-title>
+                                    <v-list-item-action>
+                                        <v-icon
+                                            :medium="$vuetify.breakpoint.smAndDown"
+                                            :color="visit.arrival.status ? 'success ':'error'"
+                                            v-text="visit.arrival.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
+                                    </v-list-item-action>
+                                </template>
+                                <v-list-item class="px-0">
+                                    <v-row full-width class="v-picker__title primary mx-auto ma-sm-2">
+                                        <v-col
+                                            cols="4"
+                                            sm="2"
+                                            class="text-sm-body-2 text-subtitle-1">2020</v-col>
+                                        <v-col
+                                            cols="8"
+                                            sm="6"
+                                            class="text-sm-h4 text-h5">
+                                            <div>Sun, Jul 19</div>
+                                        </v-col>
+                                        <v-col
+                                            cols="12"
+                                            sm="4"
+                                            class="text-sm-h4 text-h5  justify-between"><span>1 :05</span> <span class="text-body-1">AM</span>
+                                        </v-col>
+                                    </v-row>
+                                </v-list-item>
+                            </v-list-group>
+                        </v-card>
+                    </v-timeline-item>
+                    <v-timeline-item
+                        icon="mdi-cash-usd"
+                        :color="visit.payments.status ? 'success':'error'"
+                        key="payment"
+                        fill-dot
+                        right>
+                        <v-card>
+                            <v-list-group class="justify-start" no-action>
+                                <template v-slot:activator>
+                                    <v-list-item-title class="headline">Payments </v-list-item-title>
+                                    <v-list-item-action>
+                                        <v-icon :color="visit.payments.status ? 'success ':'error'" v-text="visit.payments.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
+                                    </v-list-item-action>
+                                </template>
+                                <v-list-item class="px-0">
+                                    <v-container fluid class="px-0 px-sm-3">
+                                        <v-data-iterator :items="visit.payments.items" hide-default-footer>
+                                            <template v-slot:default="props">
+                                                <v-row>
+                                                    <v-col
+                                                        v-for="item in props.items"
+                                                        :key="item.id"
+                                                        cols="12"
+                                                        sm="6"
+                                                        >
+                                                        <v-card>
+                                                            <v-card-title class="subheading font-weight-bold">No : {{ item.date }}</v-card-title>
 
-                <!--<v-timeline-item
-    v-for="item1,key,i in visit.progress_items"
-    :key="i"
-    :icon="icons[key]"
-    :color="item1.status ? 'success':'error'"
-    fill-dot
-    right>
+                                                            <v-divider></v-divider>
 
-<v-card>
+                                                            <v-list dense>
+                                                                <v-list-item
+                                                                    v-if="title !='stuff' && title !='id'&& title !='date'"
+                                                                    v-for="value,title in item"
+                                                                    :key="title">
+                                                                    <v-list-item-content>{{ title.toUpperCase().replace(/_/g, " ") }}</v-list-item-content>
+                                                                    <v-list-item-content class="secondary--text justify-end align-center">{{ value }}</v-list-item-content>
+                                                                </v-list-item>
+                                                            </v-list>
+                                                        </v-card>
+                                                    </v-col>
+                                                    <v-col cols="12">
+                                                        <v-card
+                                                            flat
+                                                            outlined
+                                                            class="d-flex justify-end">
+                                                            <v-card-title class="subheading  primary--text font-weight-bold">Total : {{ visit.payments.total }}</v-card-title>
+                                                        </v-card>
+                                                    </v-col>
+                                                </v-row>
+                                            </template>
+                                        </v-data-iterator>
+                                        <!-- <v-simple-table class="text-h5">
+                                        <template v-slot:default>
+                                            <thead>
+                                                <tr
+                                                    v-if="index==0"
+                                                    v-for="row,index in visit.payments.items"
+                                                    :key="index">
+                                                    <th
+                                                        v-for="(col,title,i) in row"
+                                                        :key="i"
+                                                        class="text-left text-h6">{{title}}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for="row,index in visit.payments.items" :key="index">
+                                                    <td
+                                                        class="text-left subtitle-2"
+                                                        v-for="col in row"
+                                                        :key="col.id">{{ col }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td class="text-left subtitle-2"> TOTAL</td>
+                                                    <td class="text-left subtitle-2">{{ visit.payments.total }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </template>
+                                    </v-simple-table> -->
+                                    </v-container>
+                                </v-list-item>
+                            </v-list-group>
+                        </v-card>
+                    </v-timeline-item>
+                    <v-timeline-item
+                        icon="mdi-stethoscope"
+                        :color="visit.operation.status ? 'success':'error'"
+                        key="operation"
+                        fill-dot
+                        right>
+                        <v-card>
+                            <v-list-group
+                                class="justify-start"
+                                no-action
+                                dense>
+                                <template v-slot:activator>
+                                    <v-list-item-title class="headline">Treatment </v-list-item-title>
+                                    <v-list-item-action>
+                                        <v-icon :color="visit.operation.status ? 'success ':'error'" v-text="visit.operation.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
+                                    </v-list-item-action>
+                                </template>
+                                <v-list-item class="px-0">
+                                    <v-container class="px-0 pa-sm-3" fluid>
+                                        <v-data-iterator :items="visit.operation.items" hide-default-footer>
+                                            <template v-slot:default="props">
+                                                <v-row>
+                                                    <v-col
+                                                        v-for="item in props.items"
+                                                        :key="item.id"
+                                                        cols="12"
+                                                        sm="6"
+                                                        >
+                                                        <v-card>
+                                                            <v-card-title class="subheading font-weight-bold">No : {{ item.id }}</v-card-title>
 
-<v-list-group
-    :value="!item1.satus"
-    class="justify-start"
-    no-action
-    dense>
+                                                            <v-divider></v-divider>
 
-<template v-slot:activator>
-
-<v-list-item-title class="headline">{{key.toUpperCase().replace(/_/g, " ")}} </v-list-item-title>
-
-<v-list-item-action>
-
-<v-icon
-    :medium="$vuetify.breakpoint.smAndDown"
-    :color="item1.status ? 'success ':'error'"
-    v-text="item1.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
-
-</v-list-item-action>
-
-</template>
-
-<v-list-item
-    v-for="item2,title,i in item1.children"
-    :key="i"
-    class="d-flex justify-start">
-
-<tree :node="item2"/>
-
-</v-list-item>
-
-</v-list-group>
-
-</v-card>
-
-</v-timeline-item> -->
-                <v-timeline-item
-                    icon="mdi-airplane-landing"
-                    :color="visit.progress_items.arrival.status ? 'success':'error'"
-                    fill-dot
-                    right>
-                    <v-card>
-                        <v-list-group
-                            :value="!visit.progress_items.arrival.status"
-                            class=""
-                            no-action
-                            dense>
-                            <template v-slot:activator>
-                                <v-list-item-title class="headline">Arrival</v-list-item-title>
-                                <v-list-item-action>
-                                    <v-icon
-                                        :medium="$vuetify.breakpoint.smAndDown"
-                                        :color="visit.progress_items.arrival.status ? 'success ':'error'"
-                                        v-text="visit.progress_items.arrival.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
-                                </v-list-item-action>
-                            </template>
-                            <v-list-item class="pl-5">
-                                <div class="text-sm-h5 text-xs-body-1">
-                                    <p>Date :<strong>{{visit.progress_items.arrival.items.arrival_date}}</strong>
-                                        Time :<strong>{{visit.progress_items.arrival.items.arrival_time}}</strong></p>
-                                    <p>Flight Number : <strong>{{visit.progress_items.arrival.items.arrival_flight}}.</strong></p>
-                                </div>
-                            </v-list-item>
-                        </v-list-group>
-                    </v-card>
-                </v-timeline-item>
-                <v-timeline-item
-                    icon="mdi-cash-usd"
-                    :color="visit.progress_items.payments.status ? 'success':'error'"
-                    fill-dot
-                    right>
-                    <v-card>
-                        <v-list-group
-                            :value="!visit.progress_items.payments.status"
-                            class="justify-start"
-                            no-action>
-                            <template v-slot:activator>
-                                <v-list-item-title class="headline">payments </v-list-item-title>
-                                <v-list-item-action>
-                                    <v-icon :color="visit.progress_items.payments.status ? 'success ':'error'" v-text="visit.progress_items.payments.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
-                                </v-list-item-action>
-                            </template>
-                            <v-list-item>
-                               <v-container fluid >
-                                  <v-simple-table class="text-h5">
-                                    <template v-slot:default>
-                                        <thead>
-                                            <tr v-if="index==0" v-for="row,index in visit.progress_items.payments.items" :key="index">
-                                                <th  v-for="(col,title,i) in row" :key="i" class="text-left text-h6">{{title}}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr v-for="row,index in visit.progress_items.payments.items" :key="index">
-                                                <td class="text-left subtitle-2" v-for="col in row" :key="col.id">{{ col }}</td>
-                                            </tr>
-                                            <tr >
-                                              <td></td>
-                                              <td></td>
-                                              <td class="text-left subtitle-2"> TOTAL</td>
-                                                <td class="text-left subtitle-2">{{ visit.progress_items.payments.total }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </template>
-                                </v-simple-table>
-                               </v-container>
-                            </v-list-item>
-                        </v-list-group>
-                    </v-card>
-                </v-timeline-item>
-                <v-timeline-item
-                    icon="mdi-stethoscope"
-                    :color="visit.progress_items.operation ? 'success':'error'"
-                    fill-dot
-                    right>
-                    <v-card>
-                        <v-list-group
-                            :value="!visit.progress_items.operation"
-                            class="justify-start"
-                            no-action>
-                            <template v-slot:activator>
-                                <v-list-item-title class="headline">Treatment </v-list-item-title>
-                                <v-list-item-action>
-                                    <v-icon :color="visit.progress_items.operation ? 'success ':'error'" v-text="visit.progress_items.operation ? 'mdi-check-all':'mdi-cancel'"></v-icon>
-                                </v-list-item-action>
-                            </template>
-                            <v-list-item class="d-flex justify-space-between">
-                                <span class="title"> Single Grafts :</span>
-                                <span class="title">500</span>
-                            </v-list-item>
-                            <v-list-item class="d-flex justify-space-between">
-                                <span class="title"> Multiple Grafts :</span>
-                                <span class="title"> 2500</span>
-                            </v-list-item>
-                        </v-list-group>
-                    </v-card>
-                </v-timeline-item>
-                <v-timeline-item
-                    v-if="visit.progress_items.control"
-                    icon="mdi-doctor"
-                    :color="visit.progress_items.control ? 'success':'error'"
-                    fill-dot
-                    right>
-                    <v-card>
-                        <v-list-group class="justify-start" no-action>
-                            <template v-slot:activator>
-                                <v-list-item-title class="headline">Post Op. Check </v-list-item-title>
-                                <v-list-item-action>
-                                    <v-icon :color="visit.progress_items.control ? 'success ':'error'" v-text="visit.progress_items.control ? 'mdi-check-all':'mdi-cancel'"></v-icon>
-                                </v-list-item-action>
-                            </template>
-                        </v-list-group>
-                    </v-card>
-                </v-timeline-item>
-                <v-timeline-item
-                    icon="mdi-airplane-takeoff"
-                    :color="visit.progress_items.departure ? 'success':'error'"
-                    fill-dot
-                    right>
-                    <v-card>
-                        <v-list-group
-                            :value="!visit.progress_items.departure"
-                            class="justify-start"
-                            no-action>
-                            <template v-slot:activator>
-                                <v-list-item-title class="headline">Departure </v-list-item-title>
-                                <v-list-item-action>
-                                    <v-icon :color="visit.progress_items.departure ? 'success ':'error'" v-text="visit.progress_items.departure ? 'mdi-check-all':'mdi-cancel'"></v-icon>
-                                </v-list-item-action>
-                            </template>
-                            <v-list-item class="d-flex justify-space-between">
-                                <span class="title"> Date : </span>
-                                <span class="title">{{visit.departure_date}}</span>
-                            </v-list-item>
-                            <v-list-item class="d-flex justify-space-between">
-                                <span class="title"> Time : </span>
-                                <span class="title">{{visit.departure_time}}</span>
-                            </v-list-item>
-                            <v-list-item class="d-flex justify-space-between">
-                                <span class="title"> Flight No : </span>
-                                <span class="title">{{visit.departure_flight}}</span>
-                            </v-list-item>
-                        </v-list-group>
-                    </v-card>
-                </v-timeline-item>
+                                                            <v-list dense>
+                                                                <v-list-item
+                                                                    v-if="title !='stuff' && title !='id'"
+                                                                    v-for="value,title in item"
+                                                                    :key="title">
+                                                                    <v-list-item-content>{{ title.toUpperCase().replace(/_/g, " ") }}</v-list-item-content>
+                                                                    <v-list-item-content class="justify-end align-end">{{ value }}</v-list-item-content>
+                                                                </v-list-item>
+                                                            </v-list>
+                                                        </v-card>
+                                                    </v-col>
+                                                </v-row>
+                                            </template>
+                                        </v-data-iterator>
+                                    </v-container>
+                                </v-list-item>
+                            </v-list-group>
+                        </v-card>
+                    </v-timeline-item>
+                    <v-timeline-item
+                        icon="mdi-doctor"
+                        :color="visit.control.status ? 'success':'error'"
+                        fill-dot
+                        key="control"
+                        right>
+                        <v-card>
+                            <v-list-group class="justify-start" no-action>
+                                <template v-slot:activator>
+                                    <v-list-item-title class="headline">Post Op. Check </v-list-item-title>
+                                    <v-list-item-action>
+                                        <v-icon :color="visit.control.status ? 'success ':'error'" v-text="visit.control.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
+                                    </v-list-item-action>
+                                </template>
+                                <v-list-item
+                                    class="pl-5"
+                                    v-for="value,title in visit.control.items"
+                                    :key="title">
+                                    <v-list-item-content>{{ title.toUpperCase().replace(/_/g, " ") }}</v-list-item-content>
+                                    <v-list-item-content class="align-center">
+                                        <v-icon :color="value ? 'success ':'error'" v-text="value ? 'mdi-check-all':'mdi-minus'"></v-icon>
+                                    </v-list-item-content>
+                                </v-list-item>
+                            </v-list-group>
+                        </v-card>
+                    </v-timeline-item>
+                    <v-timeline-item
+                        icon="mdi-airplane-takeoff"
+                        :color="visit.departure.status ? 'success':'error'"
+                        key="departure"
+                        fill-dot
+                        right>
+                        <v-card>
+                            <v-list-group
+                                class=""
+                                no-action
+                                dense>
+                                <template v-slot:activator>
+                                    <v-list-item-title class="headline">Departure</v-list-item-title>
+                                    <v-list-item-action>
+                                        <v-icon
+                                            :medium="$vuetify.breakpoint.smAndDown"
+                                            :color="visit.departure.status ? 'success ':'error'"
+                                            v-text="visit.departure.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
+                                    </v-list-item-action>
+                                </template>
+                                <v-list-item class="px-0">
+                                    <v-container fluid class="px-0">
+                                        <v-row full-width class="v-picker__title primary mx-auto ma-sm-2 align-end">
+                                            <v-col
+                                                cols="4"
+                                                sm="2"
+                                                class="text-sm-body-2 text-subtitle-1">2020</v-col>
+                                            <v-col
+                                                cols="8"
+                                                sm="6"
+                                                class="text-sm-h4 text-h5">
+                                                <div>Sun, Jul 19</div>
+                                            </v-col>
+                                            <v-col
+                                                cols="12"
+                                                sm="4"
+                                                class="text-sm-h4 text-h5  justify-between"><span>1 :05</span> <span class="text-body-1">AM</span>
+                                            </v-col>
+                                        </v-row>
+                                    </v-container>
+                                </v-list-item>
+                            </v-list-group>
+                        </v-card>
+                    </v-timeline-item>
+                </v-slide-x-reverse-transition>
             </v-timeline>
+        </v-col>
+        <v-col>
+            <v-container fluid class="secondary lighten-2">
+                <v-btn @click="payed=!payed">PAY</v-btn>
+                <v-card
+                    v-if="!payed"
+                    class="primary lighten-2 mb-4"
+                    elevation="5">
+                    <v-row nu-gutters full-width class="v-picker__title  mx-auto ma-sm-4 ">
+                        <v-col cols="12" class="text-h6 d-flex justify-space-between align-end">
+                            <span>Estimated Grafts</span> <span class="text-body-1">{{visit.estimated_grafts}}</span>
+                        </v-col>
+                        <v-col cols="12" class="text-h6 d-flex justify-space-between align-end ">
+                            <span>Estimated Price</span> <span class="text-body-1">{{visit.estimated_price}}</span>
+                        </v-col>
+                    </v-row>
+                </v-card>
+                <v-card v-else color="success">
+                    <v-row
+                        full-width
+                        class="v-picker__title mx-auto ma-sm-4 ">
+                        <v-col cols="12" class="text-h6 d-flex justify-space-between align-end">
+                            <span>Current Grafts</span> <span class="text-body-1">{{visit.current_grafts}}</span>
+                        </v-col>
+                        <v-col cols="12" class="text-h6 d-flex justify-space-between align-end ">
+                            <span>Current Price</span> <span class="text-body-1">{{visit.current_price}}</span>
+                        </v-col>
+                    </v-row>
+                </v-card>
+                <v-card color="" elevation="5" class="mb-4 pa-2 outlined" outlined>
+                  <v-card-title class="subheading font-weight-bold">Visit Note:</v-card-title>
+
+                    {{visit.note}}
+                </v-card>
+                <v-card color="" elevation="5" class="mb-2 pa-2">
+                  <v-card-title class="subheading font-weight-bold">Surgery Note:</v-card-title>
+                    {{visit.surgery_note}}
+                </v-card>
+            </v-container>
         </v-col>
     </v-row>
 </v-container>
 </template>
 
 <script>
-import tree from '@/components/tree.vue';
+import tree from "@/components/tree.vue";
 export default {
     name: "PatientProgress",
     data() {
         return {
+            payed: false,
             icons: {
                 arrival: "mdi-airplane-landing",
                 payments: "mdi-cash-usd",
@@ -225,12 +323,10 @@ export default {
             required: true
         }
     },
-    methods: {
-
-    },
+    methods: {},
     components: {
-        tree,
-    },
+        tree
+    }
 };
 </script>
 

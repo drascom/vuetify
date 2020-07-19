@@ -31,6 +31,7 @@ module.exports = {
   },
 
   pwa: {
-    name: 'Drascom CRM'
+    name: 'Drascom CRM',
+    manifestCrossorigin: 'anonymous'
   }
 };
