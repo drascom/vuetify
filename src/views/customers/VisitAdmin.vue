@@ -1,10 +1,10 @@
 <!--hem customer hem visit geliyor çift sorgu oluyor. customer içinden ilgili visit filtrelemyi bul  -->
 <template>
 	<v-card>
-		<v-toolbar color="secondary darken-2" dark flat>
+		<v-toolbar color="secondary darken-2" dark  class="">
 			<v-icon @click="goBack">mdi-arrow-left</v-icon><span class="pl-2">Back</span>
 			<v-spacer></v-spacer>
-			<v-tabs v-if="$vuetify.breakpoint.mdAndUp" class="ma-6 " v-model="tab" grow background-color="secondary-lighten-4" center-active icons-and-text rounded>
+			<v-tabs v-if="$vuetify.breakpoint.mdAndUp" class="" v-model="tab" grow background-color="transparent" center-active icons-and-text rounded>
 				<v-tab href="#Information">
 					<span v-if="$vuetify.breakpoint.mdAndUp">Information</span>
 					<v-icon>mdi-information-variant</v-icon>
@@ -82,7 +82,7 @@ export default {
 	data() {
 		return {
 			more: ["Information", "Finance", "Consultation"],
-			tab: null
+			tab: "Information"
 		};
 	},
 	computed: {

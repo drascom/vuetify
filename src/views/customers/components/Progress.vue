@@ -1,13 +1,15 @@
 <template>
 <v-container fluid id='item'>
     <v-row>
-        <v-col cols="12" md="8">
-          <span>{{ ['2020-12-12'] | moment("from", "2020-12-15",true) }}</span>
+        <v-col
+            cols="12"
+            md="8"
+            class="pl-0">
             <v-timeline dense>
                 <v-slide-x-reverse-transition group hide-on-leave>
                     <v-timeline-item
                         icon="mdi-hospital-building"
-                        :color="visit.arrival.status ? 'success':'error'"
+                        :color="visit.hotel.status ? 'success':'error'"
                         key="hotel"
                         fill-dot
                         right>
@@ -21,12 +23,43 @@
                                     <v-list-item-action>
                                         <v-icon
                                             :medium="$vuetify.breakpoint.smAndDown"
-                                            :color="visit.arrival.status ? 'success ':'error'"
-                                            v-text="visit.arrival.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
+                                            :color="visit.hotel.status ? 'success ':'error'"
+                                            v-text="visit.hotel.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
                                     </v-list-item-action>
                                 </template>
                                 <v-list-item class="px-0">
-                                   buraya otel bilgileri gelecek
+
+                                    <v-card
+                                        flat
+                                        :width="$vuetify.breakpoint.smAndDown ? '90%' : '60%'"
+                                        class="px-2 mx-2">
+                                        <v-alert v-if="costOfDay > 0" type="error" class="ma-2 text-center" dismissible>
+                                        Extra Days Cost <span class="text-h5 text--white">{{costOfDay}}</span>
+                                    </v-alert>
+                                        <v-text-field
+                                            label="Status"
+                                            :error="!visit.hotel.status"
+                                            :success="visit.hotel.status"
+                                            readonly
+                                            :value="visit.hotel.status? 'Confirmed' :'Not Confirmed'"></v-text-field>
+                                        <v-text-field
+                                            label="Hotel Name"
+                                            readonly
+                                            :value="visit.hotel.hotel_name"></v-text-field>
+                                        <v-text-field
+                                            label="Price Per Night"
+                                            readonly
+                                            :value="cost"></v-text-field>
+                                        <v-text-field
+                                            label="Days To Stay"
+                                            readonly
+                                            :value="stay"></v-text-field>
+                                        <v-text-field
+                                            label="Total Days"
+                                            readonly
+                                            :value="totalstay"></v-text-field>
+                                    </v-card>
+
                                 </v-list-item>
                             </v-list-group>
                         </v-card>
@@ -93,6 +126,17 @@
                                         <v-data-iterator :items="visit.payments.items" hide-default-footer>
                                             <template v-slot:default="props">
                                                 <v-row>
+                                                  <v-col cols="12">
+                                                        <v-card
+                                                            flat
+                                                            outlined
+                                                            class="d-flex grey lighten-4">
+                                                            <v-list-item class="text-h5 d-flex justify-space-between">
+                                                                <div><span class="info--text font-weight-bold">Received : </span>{{ visit.payments.total_received }} </div>
+                                                                <div v-if="visit.payments.debt > 0"><span class="error--text font-weight-bold">Debt : </span>{{ visit.payments.debt }}</div>
+                                                            </v-list-item>
+                                                        </v-card>
+                                                    </v-col>
                                                     <v-col
                                                         v-for="item in props.items"
                                                         v-if="item.type!='credit'"
@@ -111,18 +155,6 @@
                                                                     <v-list-item-content :class="(title=='amount') ? 'font-weight-bold':''" class="secondary--text justify-end align-center">{{ value }}</v-list-item-content>
                                                                 </v-list-item>
                                                             </v-list>
-                                                        </v-card>
-                                                    </v-col>
-                                                    <v-col cols="12">
-                                                        <v-card
-                                                            flat
-                                                            outlined
-                                                            class="d-flex grey lighten-4">
-                                                            <v-list-item
-                                                            class="text-h5 d-flex justify-space-between">
-                                                            <div><span class="info--text font-weight-bold">Received : </span>{{ visit.payments.total_received }} </div>
-                                                            <div><span class="error--text font-weight-bold">Debt : </span>{{ visit.payments.debt }}</div>
-                                                            </v-list-item>
                                                         </v-card>
                                                     </v-col>
                                                 </v-row>
@@ -327,6 +359,15 @@
                 <v-card
                     color=""
                     elevation="5"
+                    class="mb-4 pa-2 outlined"
+                    outlined>
+                    <v-card-title class="subheading font-weight-bold">System Note:</v-card-title>
+                    Patient need to move his own hotel 'klikya Resort Hotel at 19 June 2020
+
+                </v-card>
+                <v-card
+                    color=""
+                    elevation="5"
                     class="mb-2 pa-2">
                     <v-card-title class="subheading font-weight-bold">Surgery Note:</v-card-title>
                     {{visit.surgery_note}}
@@ -344,6 +385,9 @@ export default {
     data() {
         return {
             payed: false,
+            stay:'',
+            proposal:'',
+            totalstay:'',
             icons: {
                 arrival: "mdi-airplane-landing",
                 payments: "mdi-cash-usd",
@@ -360,15 +404,26 @@ export default {
             required: true
         }
     },
-    methods: {},
-    components: {
-        tree
+    computed: {
+        costOfDay() {
+            return this.hotelExtraPayments()
+        }
     },
-    created () {
-      // this.$moment.locale('tr');
-      console.log('component dili',this.$moment().locale())
-    },
-};
+    methods: {
+        hotelExtraPayments() {
+            let checkin = this.$moment(this.visit.hotel.checkin);
+            let checkout = this.$moment(this.visit.hotel.checkout);
+            let arrival = this.$moment(this.visit.arrival.items.arrival_date);
+            let departure = this.$moment(this.visit.departure.items.departure_date);
+            this.cost = this.visit.hotel.cost_per_night;
+            this.proposal = this.visit.hotel.our_proposal;
+            this.totalstay = departure.diff(arrival, 'days');
+            this.stay = checkout.diff(checkin, 'days');
+            return (this.stay - this.proposal) * this.cost;
+            // return stay + '  /  ' + proposal + '  /  ' + (stay - proposal) * cost;
+        },
+    }
+}
 </script>
 
 <style lang="scss" scoped>

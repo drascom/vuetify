@@ -1,5 +1,5 @@
 <template>
-<div>
+<v-container fluid>
     <v-card color="" class="pa-6 mx-auto">
         <div class="d-flex flex-justify-center mx-auto">
             <div class="my-2 ">
@@ -21,7 +21,6 @@
         :items="desserts"
         disable-filtering
         disable-sort
-        group-by="type"
         item-key="type"
         show-group-by
         sort-by="amount"
@@ -119,12 +118,12 @@
         </template>
         <template v-slot:item.actions="{ item }">
             <v-icon
-                small
+                medium
                 class="mr-2"
                 @click="editItem(item)">
                 mdi-pencil
             </v-icon>
-            <v-icon small @click="deleteItem(item)">
+            <v-icon medium @click="deleteItem(item)">
                 mdi-delete
             </v-icon>
         </template>
@@ -132,7 +131,7 @@
             <v-btn color="primary" @click="initialize">Reset</v-btn>
         </template>
     </v-data-table>
-</div>
+</v-container>
 </template>
 
 <script>

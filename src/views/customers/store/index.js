@@ -193,11 +193,12 @@ const moduleData = {
         status_color: "success"
       },
       hotel:{
+        status:true,
         hotel_name:'Rixos Beldibi',
         checkin:"2020-07-15",
         checkout:"2020-07-19",
-        cost_per_night:'80',
-        totalAmount:'402'
+        our_proposal:2,
+        cost_per_night:80,
       },
       arrival: {
         status: true,
@@ -271,7 +272,7 @@ const moduleData = {
       departure: {
         status: false,
         items: {
-          departure_date: "2020-07-19",
+          departure_date: "2020-07-24",
           departure_time: "03:30",
           departure_flight: "PGS-13"
         }
