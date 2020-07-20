@@ -1,8 +1,15 @@
 <template>
-<v-menu offset-y origin="center center" :nudge-bottom="10" transition="scale-transition">
+<v-menu
+    offset-y
+    origin="center center"
+    :nudge-bottom="10"
+    transition="scale-transition">
     <template v-slot:activator="{on}">
-        <v-btn icon text v-on="on">
-            <v-avatar size="22" >
+        <v-btn
+            icon
+            text
+            v-on="on">
+            <v-avatar size="22">
                 <v-img :src="set_flag(flag)"></v-img>
             </v-avatar> Language
         </v-btn>
@@ -37,9 +44,9 @@ export default {
         locales,
     }),
     computed: {
-      flag() {
-        return this.$store.state.settings.locale
-      }
+        flag() {
+            return this.$store.state.settings.locale
+        }
     },
     methods: {
         set_flag(label) {

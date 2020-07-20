@@ -2,8 +2,35 @@
 <v-container fluid id='item'>
     <v-row>
         <v-col cols="12" md="8">
+          <span>{{ ['2020-12-12'] | moment("from", "2020-12-15",true) }}</span>
             <v-timeline dense>
                 <v-slide-x-reverse-transition group hide-on-leave>
+                    <v-timeline-item
+                        icon="mdi-hospital-building"
+                        :color="visit.arrival.status ? 'success':'error'"
+                        key="hotel"
+                        fill-dot
+                        right>
+                        <v-card>
+                            <v-list-group
+                                class=""
+                                no-action
+                                dense>
+                                <template v-slot:activator>
+                                    <v-list-item-title class="headline">Reservation</v-list-item-title>
+                                    <v-list-item-action>
+                                        <v-icon
+                                            :medium="$vuetify.breakpoint.smAndDown"
+                                            :color="visit.arrival.status ? 'success ':'error'"
+                                            v-text="visit.arrival.status ? 'mdi-check-all':'mdi-cancel'"></v-icon>
+                                    </v-list-item-action>
+                                </template>
+                                <v-list-item class="px-0">
+                                   buraya otel bilgileri gelecek
+                                </v-list-item>
+                            </v-list-group>
+                        </v-card>
+                    </v-timeline-item>
                     <v-timeline-item
                         icon="mdi-airplane-landing"
                         :color="visit.arrival.status ? 'success':'error'"
@@ -39,7 +66,8 @@
                                         <v-col
                                             cols="12"
                                             sm="4"
-                                            class="text-sm-h4 text-h5  justify-between"><span>1 :05</span> <span class="text-body-1">AM</span>
+                                            class="text-sm-h4 text-h5  justify-between">
+                                            <span>1 :05</span> <span class="text-body-1">AM</span>
                                         </v-col>
                                     </v-row>
                                 </v-list-item>
@@ -67,22 +95,20 @@
                                                 <v-row>
                                                     <v-col
                                                         v-for="item in props.items"
-                                                        :key="item.id"
+                                                        v-if="item.type!='credit'"
+                                                        :key="'p'+item.id"
                                                         cols="12"
-                                                        sm="6"
-                                                        >
-                                                        <v-card>
-                                                            <v-card-title class="subheading font-weight-bold">No : {{ item.date }}</v-card-title>
-
+                                                        sm="6">
+                                                        <v-card color="grey lighten-4">
+                                                            <v-card-title class="subheading font-weight-bold">Date : {{ item.date }}</v-card-title>
                                                             <v-divider></v-divider>
-
                                                             <v-list dense>
                                                                 <v-list-item
                                                                     v-if="title !='stuff' && title !='id'&& title !='date'"
                                                                     v-for="value,title in item"
                                                                     :key="title">
                                                                     <v-list-item-content>{{ title.toUpperCase().replace(/_/g, " ") }}</v-list-item-content>
-                                                                    <v-list-item-content class="secondary--text justify-end align-center">{{ value }}</v-list-item-content>
+                                                                    <v-list-item-content :class="(title=='amount') ? 'font-weight-bold':''" class="secondary--text justify-end align-center">{{ value }}</v-list-item-content>
                                                                 </v-list-item>
                                                             </v-list>
                                                         </v-card>
@@ -91,8 +117,12 @@
                                                         <v-card
                                                             flat
                                                             outlined
-                                                            class="d-flex justify-end">
-                                                            <v-card-title class="subheading  primary--text font-weight-bold">Total : {{ visit.payments.total }}</v-card-title>
+                                                            class="d-flex grey lighten-4">
+                                                            <v-list-item
+                                                            class="text-h5 d-flex justify-space-between">
+                                                            <div><span class="info--text font-weight-bold">Received : </span>{{ visit.payments.total_received }} </div>
+                                                            <div><span class="error--text font-weight-bold">Debt : </span>{{ visit.payments.debt }}</div>
+                                                            </v-list-item>
                                                         </v-card>
                                                     </v-col>
                                                 </v-row>
@@ -156,11 +186,10 @@
                                                 <v-row>
                                                     <v-col
                                                         v-for="item in props.items"
-                                                        :key="item.id"
+                                                        :key="'o'+item.id"
                                                         cols="12"
-                                                        sm="6"
-                                                        >
-                                                        <v-card>
+                                                        sm="6">
+                                                        <v-card color="grey lighten-4">
                                                             <v-card-title class="subheading font-weight-bold">No : {{ item.id }}</v-card-title>
 
                                                             <v-divider></v-divider>
@@ -264,7 +293,10 @@
                     v-if="!payed"
                     class="primary lighten-2 mb-4"
                     elevation="5">
-                    <v-row nu-gutters full-width class="v-picker__title  mx-auto ma-sm-4 ">
+                    <v-row
+                        nu-gutters
+                        full-width
+                        class="v-picker__title  mx-auto ma-sm-4 ">
                         <v-col cols="12" class="text-h6 d-flex justify-space-between align-end">
                             <span>Estimated Grafts</span> <span class="text-body-1">{{visit.estimated_grafts}}</span>
                         </v-col>
@@ -274,9 +306,7 @@
                     </v-row>
                 </v-card>
                 <v-card v-else color="success">
-                    <v-row
-                        full-width
-                        class="v-picker__title mx-auto ma-sm-4 ">
+                    <v-row full-width class="v-picker__title mx-auto ma-sm-4 ">
                         <v-col cols="12" class="text-h6 d-flex justify-space-between align-end">
                             <span>Current Grafts</span> <span class="text-body-1">{{visit.current_grafts}}</span>
                         </v-col>
@@ -285,13 +315,20 @@
                         </v-col>
                     </v-row>
                 </v-card>
-                <v-card color="" elevation="5" class="mb-4 pa-2 outlined" outlined>
-                  <v-card-title class="subheading font-weight-bold">Visit Note:</v-card-title>
+                <v-card
+                    color=""
+                    elevation="5"
+                    class="mb-4 pa-2 outlined"
+                    outlined>
+                    <v-card-title class="subheading font-weight-bold">Visit Note:</v-card-title>
 
                     {{visit.note}}
                 </v-card>
-                <v-card color="" elevation="5" class="mb-2 pa-2">
-                  <v-card-title class="subheading font-weight-bold">Surgery Note:</v-card-title>
+                <v-card
+                    color=""
+                    elevation="5"
+                    class="mb-2 pa-2">
+                    <v-card-title class="subheading font-weight-bold">Surgery Note:</v-card-title>
                     {{visit.surgery_note}}
                 </v-card>
             </v-container>
@@ -326,7 +363,11 @@ export default {
     methods: {},
     components: {
         tree
-    }
+    },
+    created () {
+      // this.$moment.locale('tr');
+      console.log('component dili',this.$moment().locale())
+    },
 };
 </script>
 

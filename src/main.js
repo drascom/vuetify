@@ -13,6 +13,9 @@ import store from './store';
 import './router/permission';
 import './registerServiceWorker';
 import "./plugins/axios";
+//moment
+import './plugins/moment';
+
 import VueFileAgent from "vue-file-agent";
 import VueFileAgentStyles from "vue-file-agent/dist/vue-file-agent.css";
 Vue.use( VueFileAgent )
