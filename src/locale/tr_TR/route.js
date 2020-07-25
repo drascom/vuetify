@@ -1,4 +1,12 @@
 export default {
+  customers:'Hastalar',
+  customerPage:{
+    list:'Hasta Listesi',
+    detail:'Hasta dosyası',
+    visits: 'Randevular',
+    gallery: 'Fotoğraflar',
+    visitdetail:'Randevu Detay'
+  },
   dashboard: 'Dashboard',
   // introduction: 'Introduction',
   documentation: 'Documentation',

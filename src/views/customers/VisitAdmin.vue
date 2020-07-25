@@ -1,10 +1,10 @@
 <!--hem customer hem visit geliyor çift sorgu oluyor. customer içinden ilgili visit filtrelemyi bul  -->
 <template>
 	<v-card>
-		<v-toolbar color="secondary darken-2" dark  class="">
+		<v-toolbar hide-slider color="secondary darken-2" dark  class="">
 			<v-icon @click="goBack">mdi-arrow-left</v-icon><span class="pl-2">Back</span>
 			<v-spacer></v-spacer>
-			<v-tabs v-if="$vuetify.breakpoint.mdAndUp" class="" v-model="tab" grow background-color="transparent" center-active icons-and-text rounded>
+			<v-tabs v-if="$vuetify.breakpoint.mdAndUp" :value="tab"v-model="tab" grow background-color="transparent" center-active icons-and-text rounded>
 				<v-tab href="#Information">
 					<span v-if="$vuetify.breakpoint.mdAndUp">Information</span>
 					<v-icon>mdi-information-variant</v-icon>
@@ -36,23 +36,23 @@
 			</v-btn>
 		</v-toolbar>
 
-		<v-tabs-items v-model="tab">
+		<v-tabs-items touchless v-model="tab">
 			<v-tab-item value="Information">
 				<v-card outlined>
-					<Progress :visit="visit" />
+					<Progress :visit="visit" :customer="customer"/>
 				</v-card>
 			</v-tab-item>
-			<v-tab-item value="Finance">
+			<v-tab-item touchless value="Finance">
 				<v-card color="#f5f5f5" flat>
 					<finance :payments="visit.payments"/>
 				</v-card>
 			</v-tab-item>
-			<v-tab-item value="Consultation">
+			<v-tab-item touchless value="Consultation">
 				<v-card flat>
 					3
 				</v-card>
 			</v-tab-item>
-			<v-tab-item value="Reports">
+			<v-tab-item touchless  value="Reports">
 				<v-card flat>
 					4
 				</v-card>

@@ -192,21 +192,33 @@ const moduleData = {
         status: "Completed",
         status_color: "success"
       },
-      hotel:{
-        status:true,
-        hotel_name:'Rixos Beldibi',
-        checkin:"2020-07-15",
-        checkout:"2020-07-19",
+      travel:{
+        first_hotel:'Rixos Beldibi',
+        first_hotel_checkin:"2020-07-11",
+        first_hotel_checkout:"2020-07-14",
+        second_hotel:'Hilton Double tree',
+        second_hotel_checkin:"2020-07-14",
+        second_hotel_checkout:"2020-07-19",
+        airport_to_hotel:'2020-07-11',
+        airport_to_hotel_status:true,
+        hotel_to_clinic:'2020-07-12',
+        hotel_to_hotel:'2020-07-14',
+        hotel_to_hotel_status:false,
+        hotel_to_airport:'2020-07-19',
+        hotel_to_airport_status:false,
+        our_hotel:'Rixos Beldibi',
+        our_hotel_status:true,
         our_proposal:2,
+        extra_days_payment:false,
         cost_per_night:80,
-      },
-      arrival: {
-        status: true,
-        items: {
-          arrival_date: "2020-07-15",
-          arrival_time: "08:30",
-          arrival_flight: "KK-150"
-        }
+        arrival_status: true,
+        arrival_date: "2020-07-11",
+        arrival_time: "08:30",
+        arrival_flight: "KK-150",
+        departure_status: false,
+        departure_date: "2020-07-19",
+        departure_time: "03:30",
+        departure_flight: "PGS-13"
       },
       payments: {
         status: true,
@@ -214,15 +226,15 @@ const moduleData = {
           {
             id: "1",
             date: "2020-07-16",
-            type: "credit",
-            account: "Invoice",
+            type: "debit",
+            account: "Operation",
             amount: "3000",
             note: ""
           },
           {
             id: "1",
             date: "2020-07-16",
-            type: "debit",
+            type: "credit",
             account: "Bank Transfer",
             amount: "300",
             note: ""
@@ -230,17 +242,25 @@ const moduleData = {
           {
             id: "2",
             date: "2020-07-16",
-            type: "debit",
+            type: "credit",
             account: "Cash",
             amount: "2500",
             note: "1000 euro , 2000 USD"
+          },
+          {
+            id: "2",
+            date: "2020-07-16",
+            type: "debit",
+            account: "bank",
+            amount: "1000",
+            note: "Agency"
           }
         ],
         total_received: "2800",
         debt:'200'
       },
       operation: {
-        status: false,
+        status: true,
         items: [
           {
             id: "11",
@@ -269,14 +289,6 @@ const moduleData = {
           washing: false
         }
       },
-      departure: {
-        status: false,
-        items: {
-          departure_date: "2020-07-24",
-          departure_time: "03:30",
-          departure_flight: "PGS-13"
-        }
-      }
     }
   },
   getters: {

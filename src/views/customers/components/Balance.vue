@@ -1,7 +1,7 @@
 <template>
 <v-container fluid>
-    <v-card color="" class="pa-6 mx-auto">
-        <div class="d-flex flex-justify-center mx-auto">
+    <v-card color="" class="mx-auto">
+        <!-- <div class="d-flex flex-justify-center mx-auto">
             <div class="my-2 ">
                 <v-btn>Normal</v-btn>
             </div>
@@ -14,14 +14,14 @@
             <div class="my-2">
                 <v-btn disabled>Disabled</v-btn>
             </div>
-        </div>
+        </div> -->
     </v-card>
     <v-data-table
         :headers="headers"
         :items="desserts"
         disable-filtering
         disable-sort
-        item-key="type"
+        item-key="id+type"
         show-group-by
         sort-by="amount"
         class="elevation-4 pt-5 font-weight-medium">
@@ -101,9 +101,12 @@
         </template>
         <template v-slot:body.append="{ headers }">
             <tr>
-                <td v-for="(header,i) in headers" :key="i">
+                <td class="d-block d-sm-table-cell" v-for="(header,i) in headers" :key="i">
+                    <div v-if="header.value == 'account'">
+                       Debt
+                    </div>
                     <div v-if="header.value == 'amount'">
-                        {{payments.total}}
+                        {{payments.debt}}
                     </div>
                     <div v-else>
                         <!-- empty table cells for columns that don't need a sum -->
