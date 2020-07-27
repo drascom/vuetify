@@ -221,37 +221,50 @@ const moduleData = {
         departure_flight: "PGS-13"
       },
       payments: {
-        status: true,
-        items: [
+        income: [
           {
             id: "1",
             date: "2020-07-16",
-            type: "debit",
+            type: "alacak",
             account: "Operation",
             amount: "3000",
             note: ""
           },
           {
-            id: "1",
+            id: "2",
             date: "2020-07-16",
-            type: "credit",
+            type: "gelir",
             account: "Bank Transfer",
             amount: "300",
             note: ""
           },
           {
-            id: "2",
+            id: "3",
             date: "2020-07-16",
-            type: "credit",
+            type: "gelir",
             account: "Cash",
             amount: "2500",
             note: "1000 euro , 2000 USD"
           },
+        ],
+        outgoing:[
           {
-            id: "2",
+            id: "3",
+            relatedCustomer:'1',
             date: "2020-07-16",
-            type: "debit",
-            account: "bank",
+            type: "borç",
+            account: "Cash",
+            amount: "100",
+            owner:'HRM Turizm',
+            note: "2 sefer"
+          },
+          {
+            id: "4",
+            relatedCustomer:'1',
+            date: "2020-07-16",
+            type: "borç",
+            account: "Bank Transfer",
+            owner:'Acenta',
             amount: "1000",
             note: "Agency"
           }

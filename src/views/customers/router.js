@@ -28,6 +28,7 @@ const customerRouter = [
         path: 'detail/visit/:id',
         component: () => import('@/views/customers/VisitAdmin'),
         name: 'VisitDetail',
+        props:true,
         meta: { title: 'route.customerPage.visitdetail' },
       },
       {

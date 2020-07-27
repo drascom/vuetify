@@ -37,6 +37,7 @@
             </v-list-item>
         </v-list>
         <v-divider />
+        <v-list-item>
         <v-list-item-content>
             <localization />
         </v-list-item-content>

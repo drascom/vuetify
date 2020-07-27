@@ -1,9 +1,6 @@
 <template>
 	<div>
 		<v-card color="primary lighten-3" class="pt-1" v-if="listMode" flat>
-			<v-alert border="left" type="info" colored-border color="error accent-4" class="my-4 mx-4" elevation="1">
-				Last reservation is Not Confirmed Yet !
-			</v-alert>
 			<v-list>
 				<v-list-item>
 					<v-row no-gutters class="d-flex justify-start align-center text-uppercase font-weight-bold">

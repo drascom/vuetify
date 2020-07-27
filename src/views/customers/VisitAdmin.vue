@@ -88,7 +88,7 @@ export default {
 	computed: {
 		visitId() {
 			return this.$route.params.id;
-		},
+    },
 		...mapGetters("customers", {
 			customer: "getCustomer",
 			visit: "getVisit"
@@ -99,8 +99,8 @@ export default {
 			this.tab = item;
 		},
 		goBack() {
-			console.log("going back");
-		}
+			this.$router.push("/customers/detail/" + this.customer.id);
+		},
 	}
 };
 </script>
