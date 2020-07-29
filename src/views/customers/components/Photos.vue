@@ -1,6 +1,6 @@
 <template>
 	<v-card class="mx-auto px-2">
-		<v-card-title>Customer Photo Gallery</v-card-title>
+		<v-card-title>{{$t('customer.gallery') }}</v-card-title>
 		<v-row >
 			<v-col v-for="photo,index in photos" :key="index" class="d-flex child-flex" cols="4">
 				<v-card flat tile class="d-flex">

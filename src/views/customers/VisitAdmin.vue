@@ -6,15 +6,15 @@
 			<v-spacer></v-spacer>
 			<v-tabs v-if="$vuetify.breakpoint.mdAndUp" :value="tab"v-model="tab" grow background-color="transparent" center-active icons-and-text rounded>
 				<v-tab href="#Information">
-					<span v-if="$vuetify.breakpoint.mdAndUp">Information</span>
+					<span v-if="$vuetify.breakpoint.mdAndUp">{{$t('customer.information') }}</span>
 					<v-icon>mdi-information-variant</v-icon>
 				</v-tab>
 				<v-tab href="#Finance">
-					<span v-if="$vuetify.breakpoint.mdAndUp">Finance</span>
+					<span v-if="$vuetify.breakpoint.mdAndUp">{{$t('customer.finance') }}</span>
 					<v-icon>mdi-finance</v-icon>
 				</v-tab>
 				<v-tab href="#Consultation">
-					<span v-if="$vuetify.breakpoint.mdAndUp">Consultation</span>
+					<span v-if="$vuetify.breakpoint.mdAndUp">{{$t('customer.consultation') }}</span>
 					<v-icon>mdi-stethoscope</v-icon>
 				</v-tab>
 			</v-tabs>

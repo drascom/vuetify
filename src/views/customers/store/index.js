@@ -62,7 +62,7 @@ const moduleData = {
           deposits: "300 Euros",
           department: "Anadolu Hastanesi",
           current_price: "2900 Euro",
-          status: "Completed",
+          status: "completed",
           status_color: "success",
           notes: "Notes About this visit",
           arrival_date: "02-02-2020",
@@ -203,19 +203,19 @@ const moduleData = {
         airport_to_hotel_status:true,
         hotel_to_clinic:'2020-07-12',
         hotel_to_hotel:'2020-07-14',
-        hotel_to_hotel_status:false,
+        hotel_to_hotel_status:true,
         hotel_to_airport:'2020-07-19',
-        hotel_to_airport_status:false,
+        hotel_to_airport_status:true,
         our_hotel:'Rixos Beldibi',
         our_hotel_status:true,
         our_proposal:2,
-        extra_days_payment:false,
+        extra_days_payment:true,
         cost_per_night:80,
         arrival_status: true,
         arrival_date: "2020-07-11",
         arrival_time: "08:30",
         arrival_flight: "KK-150",
-        departure_status: false,
+        departure_status: true,
         departure_date: "2020-07-19",
         departure_time: "03:30",
         departure_flight: "PGS-13"
@@ -256,7 +256,8 @@ const moduleData = {
             account: "Cash",
             amount: "100",
             owner:'HRM Turizm',
-            note: "2 sefer"
+            note: "2 sefer",
+            status:true
           },
           {
             id: "4",
@@ -266,11 +267,12 @@ const moduleData = {
             account: "Bank Transfer",
             owner:'Acenta',
             amount: "1000",
-            note: "Agency"
+            note: "Agency",
+            status:false
           }
         ],
         total_received: "2800",
-        debt:'200'
+        debt:"200"
       },
       operation: {
         status: true,

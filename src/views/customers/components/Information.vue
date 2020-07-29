@@ -4,12 +4,12 @@
 			<v-btn absolute fab right color="accent">
 				<v-icon>mdi-pencil</v-icon>
 			</v-btn>
-			<v-subheader>Information</v-subheader>
+			<v-subheader class="text-h4">	{{$t('customer.information') }}</v-subheader>
 			<v-list-item-group color="primary">
 				<v-list-item>
 					<v-list-item-content>
 						<v-card class="mx-auto p-2 border">
-							<div class="overline mb-4">Personal Note</div>
+							<div class="overline mb-4">{{$t('customer.note') }}</div>
 							<v-card-text class="headline">{{ customer.note }}</v-card-text>
 						</v-card>
 					</v-list-item-content>
@@ -21,7 +21,7 @@
 					</v-list-item-icon>
 					<v-list-item-content>
 						<v-list-item-title>{{ customer.recordedBy}}</v-list-item-title>
-						<v-list-item-subtitle>Agent</v-list-item-subtitle>
+						<v-list-item-subtitle>{{$t('customer.agent') }}</v-list-item-subtitle>
 					</v-list-item-content>
 					<v-list-item-icon>
 						<v-icon>mdi-message-text</v-icon>
@@ -34,7 +34,7 @@
 					</v-list-item-icon>
 					<v-list-item-content>
 						<v-list-item-title>{{ customer.mobile_phone}}</v-list-item-title>
-						<v-list-item-subtitle>Mobile</v-list-item-subtitle>
+						<v-list-item-subtitle>{{$t('customer.phone') }}</v-list-item-subtitle>
 					</v-list-item-content>
 
 					<v-list-item-icon>
@@ -50,7 +50,7 @@
 					</v-list-item-icon>
 					<v-list-item-content>
 						<v-list-item-title>{{ customer.email}}</v-list-item-title>
-						<v-list-item-subtitle>Email</v-list-item-subtitle>
+						<v-list-item-subtitle>{{$t('customer.email') }}</v-list-item-subtitle>
 					</v-list-item-content>
 					<v-list-item-icon>
 						<a :href="`mailto:${customer.email}`" class="text-decoration-none">

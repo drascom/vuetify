@@ -19,22 +19,22 @@
 					<v-container>
 						<v-row no-gutters>
 							<v-col cols="6" sm="3" md="2">
-								Name
+								{{$t('customer.name') }}
 							</v-col>
 							<v-col cols="6" sm="3" md="2">
-								Phone
+								{{$t('customer.phone') }}
 							</v-col>
 							<v-col cols="2" sm="3" md="2" class="d-none d-sm-flex">
-								Email
+								{{$t('customer.email') }}
 							</v-col>
 							<v-col cols="2" sm="3" md="2" class="d-none d-sm-flex">
-								Country
+								{{$t('customer.country') }}
 							</v-col>
 							<v-col cols="2" sm="2" md="2" class="d-none d-md-flex">
-								Agent
+								{{$t('customer.agent') }}
 							</v-col>
 							<v-col cols="1" sm="1" md="1" class="d-none d-md-flex">
-								Active
+								{{$t('customer.active') }}
 							</v-col>
 						</v-row>
 					</v-container>

@@ -5,16 +5,16 @@
 				<v-list-item>
 					<v-row no-gutters class="d-flex justify-start align-center text-uppercase font-weight-bold">
 						<v-col cols="4" sm="3">
-							Type
+							{{$t('tablefields.type') }}
 						</v-col>
 						<v-col cols="3" sm="3">
-							Date
+							{{$t('tablefields.date') }}
 						</v-col>
 						<v-col cols="3" class="d-none d-sm-flex">
-							Treatment
+								{{$t('tablefields.treatment') }}
 						</v-col>
 						<v-col cols="4" sm="3">
-							Status
+								{{$t('tablefields.status') }}
 						</v-col>
 					</v-row>
 				</v-list-item>
@@ -34,7 +34,7 @@
 									</v-col>
 									<v-col cols="4" sm="3">
 										<v-chip class="ma-2" :color="item.status_color" small>
-											{{item.status}}
+											{{item.status=='completed' ? $t('tablefields.completed') : 	$t('tablefields.waiting') }}
 										</v-chip>
 									</v-col>
 								</v-row>
