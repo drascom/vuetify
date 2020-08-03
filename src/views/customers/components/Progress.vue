@@ -3,7 +3,7 @@
   <v-row>
     <v-col
       cols="12"
-      md="8"
+      sm="8"
       class="pl-2">
       <v-toolbar
         fixed
@@ -12,16 +12,7 @@
         color="secondary lighten-2"
         dark>
         <v-toolbar-title>{{$t('customer.progress') }}</v-toolbar-title>
-
       </v-toolbar>
-      <!-- <v-alert
-                type="error"
-                color="error accent-4 full-width"
-                class="pa-2"
-                elevation="1"
-                dismissible>
-                Extra Days Cost <span class="text-h5 text--white">{{costOfDay}}</span>
-            </v-alert> -->
       <v-card class="mx-auto mt-4">
         <v-list-group
           class="pa-2"
@@ -168,7 +159,7 @@
         </v-list-group>
       </v-card>
     </v-col>
-    <v-col class="pl-1">
+    <v-col cols="12" sm="4" class="pl-1">
       <v-container fluid class="secondary lighten-2">
         <v-btn @click="payed=!payed">PAY</v-btn>
         <v-card
@@ -182,7 +173,7 @@
               <span>{{$t('customer.estimategraft') }}</span> <span class="text-body-1">{{visit.estimated_grafts}}</span>
             </v-col>
             <v-col cols="12" class="text-h6 d-flex justify-space-between align-end ">
-              <span>{{$t('customer.estimateprice') }}</span> <span class="text-body-1">{{visit.estimated_price}}</span>
+              <span>{{$t('customer.estimateprice') }}</span> <span class="text-body-1">{{visit.estimatedPrice}}</span>
             </v-col>
           </v-row>
         </v-card>
@@ -192,7 +183,7 @@
               <span>{{$t('customer.currentgraft') }}</span> <span class="text-body-1">{{visit.current_grafts}}</span>
             </v-col>
             <v-col cols="12" class="text-h6 d-flex justify-space-between align-end ">
-              <span>{{$t('customer.currentprice') }}</span> <span class="text-body-1">{{visit.current_price}}</span>
+              <span>{{$t('customer.currentprice') }}</span> <span class="text-body-1">{{visit.currentPrice}}</span>
             </v-col>
           </v-row>
         </v-card>
@@ -208,12 +199,13 @@
           color=""
           elevation="5"
           class="mb-2 pa-2">
-          <v-card-title class="subheading font-weight-bold">{{$t('customer.doctornote') }}</v-card-title>
+          <v-card-title class="subheading font-weight-bold">{{$t('customer.doctornote') }}
+          </v-card-title>
           {{visit.surgery_note}}
         </v-card>
 
         <a class="text-decoration-none" @click="goToPhotos">
-          <photos :photos="customer.photos" />
+          	<v-img :lazy-src="photoGalleryImg" ></v-img>
         </a>
       </v-container>
     </v-col>
@@ -228,10 +220,12 @@ export default {
   name: "PatientProgress",
   data() {
     return {
+      photoGalleryImg: require("@/assets/images/pages/photogallery.jpg"),
       payed: false,
       stay: '',
       proposal: '',
       totalstay: '',
+      selectedList:0,
       icons: {
         arrival: "mdi-airplane-landing",
         payments: "mdi-cash-usd",
@@ -286,10 +280,10 @@ export default {
     hotelExtraPayments() {
       // let checkin = this.$moment(this.visit.hotel.checkin);
       // let checkout = this.$moment(this.visit.hotel.checkout);
-      // let arrival = this.$moment(this.visit.arrival.items.arrival_date);
-      // let departure = this.$moment(this.visit.departure.items.departure_date);
-      // this.cost = this.visit.hotel.cost_per_night;
-      // this.proposal = this.visit.hotel.our_proposal;
+      // let arrival = this.$moment(this.visit.arrival.items.arrivalDate);
+      // let departure = this.$moment(this.visit.departure.items.departureDate);
+      // this.cost = this.visit.hotel.costPer_night;
+      // this.proposal = this.visit.hotel.ourProposal;
       // this.totalstay = departure.diff(arrival, 'days');
       // this.stay = checkout.diff(checkin, 'days');
       // return (this.stay - this.proposal) * this.cost;

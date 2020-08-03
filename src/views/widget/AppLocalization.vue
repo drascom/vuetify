@@ -1,5 +1,6 @@
 <template>
-<v-menu
+<v-container fluid>
+  <v-menu
     offset-y
     origin="center center"
     :nudge-bottom="10"
@@ -31,6 +32,8 @@
         </v-list-item>
     </v-list>
 </v-menu>
+</v-container>
+
 </template>
 
 <script>

@@ -31,6 +31,7 @@ export default {
     airtport:'Airport',
     ourhotel:'Our Hotel',
     extradays:'Extra Days',
+    costPerNight:'Cost Per Night',
     transport:'Transport',
     departure:'Departure'
   },

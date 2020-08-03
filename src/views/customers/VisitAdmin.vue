@@ -38,7 +38,7 @@
 
 		<v-tabs-items touchless v-model="tab">
 			<v-tab-item value="Information">
-				<v-card outlined>
+				<v-card class="pb-5" flat outlined>
 					<Progress :visit="visit" :customer="customer"/>
 				</v-card>
 			</v-tab-item>

@@ -31,6 +31,7 @@ export default {
     airtport:'Hava Alanı',
     ourhotel:'Bizim Otel',
     extradays:'Ekstra Günler',
+    costPerNight:'Gecelik Fiyat',
     transport:'Transfer',
     departure:'Gidiş'
   },

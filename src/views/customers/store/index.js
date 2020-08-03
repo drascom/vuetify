@@ -9,7 +9,7 @@ const moduleData = {
         active: true,
         name: "Jason Oner",
         avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
-        mobile_phone: "+111111111111",
+        mobilePhone: "+111111111111",
         email: "abcdefg@gmail.com",
         country: "Russia",
         recordedBy: "Kristina",
@@ -20,7 +20,7 @@ const moduleData = {
         active: false,
         name: "Ranee Carlson",
         avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-        mobile_phone: "+02222222222",
+        mobilePhone: "+02222222222",
         email: "xyz@yahoo.com",
         country: "Russia",
         recordedBy: "Swetlana"
@@ -35,8 +35,8 @@ const moduleData = {
       email: "a@b.com",
       passaport_no: "a@b.com",
       origin: "Russia",
-      mobile_phone: "+44 123 456 789",
-      land_phone: "+44 123 456 789",
+      mobilePhone: "+44 123 456 789",
+      landPhone: "+44 123 456 789",
       recordedBy: "Kristina",
       referencedBy: "Igor Medevev",
       note:
@@ -56,17 +56,17 @@ const moduleData = {
           treatment: "Saç Ekim",
           estimated_grafts: "2800",
           current_grafts: "2800",
-          estimated_price: "3000 Euros",
-          current_price: "3000 Euros",
+          estimatedPrice: "3000 Euros",
+          currentPrice: "3000 Euros",
           payment_type: "Credit Card",
           deposits: "300 Euros",
           department: "Anadolu Hastanesi",
-          current_price: "2900 Euro",
+          currentPrice: "2900 Euro",
           status: "completed",
           status_color: "success",
           notes: "Notes About this visit",
-          arrival_date: "02-02-2020",
-          departure_date: "05-02-2020",
+          arrivalDate: "02-02-2020",
+          departureDate: "05-02-2020",
           arrival_time: "08:30",
           departure_time: "03:30",
           arrival_flight: "KK-150",
@@ -113,17 +113,17 @@ const moduleData = {
           treatment: "Saç Ekimi",
           estimated_grafts: "2800",
           current_grafts: "2800",
-          estimated_price: "3000 Euros",
-          current_price: "3000 Euros",
+          estimatedPrice: "3000 Euros",
+          currentPrice: "3000 Euros",
           payment_type: "Cash",
           deposits: "0 Euros",
           department: "Anadolu Hastanesi",
-          current_price: "3400 Euro",
+          currentPrice: "3400 Euro",
           status: "Not Confirmed",
           status_color: "warning",
           notes: "Notes About this visit",
-          arrival_date: "02-02-2020",
-          departure_date: "05-02-2020",
+          arrivalDate: "02-02-2020",
+          departureDate: "05-02-2020",
           arrival_time: "08:30",
           departure_time: "03:30",
           arrival_flight: "KK-150",
@@ -180,45 +180,34 @@ const moduleData = {
       treatment: "Saç Ekim",
       estimated_grafts: "2800",
       current_grafts: "2800",
-      estimated_price: "3000 Euros",
-      current_price: "3000 Euros",
-      deposits: "300 Euros",
+      estimatedPrice: "3000 Euros",
+      currentPrice: "3000 Euros",
       department: "Anadolu Hastanesi",
-      current_price: "2900 Euro",
       note: "Notes About this visit",
       surgery_note:
         "Donor area is too weak.2nd surgery not possible.grafts are too small",
-      overall_progress: {
-        status: "Completed",
-        status_color: "success"
-      },
       travel:{
-        first_hotel:'Rixos Beldibi',
-        first_hotel_checkin:"2020-07-11",
-        first_hotel_checkout:"2020-07-14",
-        second_hotel:'Hilton Double tree',
-        second_hotel_checkin:"2020-07-14",
-        second_hotel_checkout:"2020-07-19",
-        airport_to_hotel:'2020-07-11',
-        airport_to_hotel_status:true,
-        hotel_to_clinic:'2020-07-12',
-        hotel_to_hotel:'2020-07-14',
-        hotel_to_hotel_status:true,
-        hotel_to_airport:'2020-07-19',
-        hotel_to_airport_status:true,
-        our_hotel:'Rixos Beldibi',
-        our_hotel_status:true,
-        our_proposal:2,
-        extra_days_payment:true,
-        cost_per_night:80,
-        arrival_status: true,
-        arrival_date: "2020-07-11",
-        arrival_time: "08:30",
-        arrival_flight: "KK-150",
-        departure_status: true,
-        departure_date: "2020-07-19",
-        departure_time: "03:30",
-        departure_flight: "PGS-13"
+        firstHotel:'Rixos Beldibi',
+        firstHotel_checkin:"2020-07-11",
+        firstHotel_checkout:"2020-07-14",
+        secondHotel:'Hilton Double tree',
+        secondHotel_checkin:"2020-07-14",
+        secondHotel_checkout:"2020-07-19",
+        ourHotel:'Rixos Beldibi',
+        ourHotelStatus:true,
+        ourProposal:2,
+        extraDays:'1',
+        extraDaysPayment:false,
+        costPerNight:80,
+        arrival:{arrivalDate: "2020-07-11 08:30:00", arrivalFlight:"KK-150",arrival_status: true},
+        departure:{departureDate: "2020-07-19 11:30:00",departureFlight: "PGS-13",departureStatus: true,},
+        transfers:[
+           {date:'2020-07-11',title:'checkin',fromplace:'Airport',toplace:'1 Hotel',status:true},
+           {date:'2020-07-12',fromplace:'Rixos Beldibi hotel',toplace:'Club Pinara Resort',status:false},
+           {date:'2020-07-13',fromplace:'1 Hotel',toplace:'clinic',status:false},
+           {date:'2020-07-14',title:'checkout',fromplace:'1 Hotel',toplace:'2 hotel',status:false},
+           {date:'2020-07-19',fromplace:'2 Hotel',toplace:'airport',status:false},
+        ]
       },
       payments: {
         income: [
@@ -347,7 +336,7 @@ const moduleData = {
       const ItemIndex = state.customers.findIndex(p => p.id === itemId);
       state.customers.splice(ItemIndex, 1);
     },
-    SET_PHOTOS(state, payload) {
+    SETPHOTOS(state, payload) {
       state.customer.photos = payload;
     }
   },
@@ -389,7 +378,7 @@ const moduleData = {
             `http://localhost/uploadtest/get_list.php?id=${payload.customerId}`
           )
           .then(response => {
-            commit("SET_PHOTOS", response.data.photos);
+            commit("SETPHOTOS", response.data.photos);
             // commit( "SET_ERROR", 'dosyalar aktarıldı', { root: true } )
             resolve(response);
           })
