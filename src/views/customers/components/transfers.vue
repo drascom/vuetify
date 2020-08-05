@@ -1,6 +1,5 @@
 <template>
 <v-container fluid class="mx-auto mb-5">
-
   <VueCtkDateTimePicker
     id="Date"
     label="Date"

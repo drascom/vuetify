@@ -265,7 +265,8 @@ const moduleData = {
       },
       operation: {
         status: true,
-        items: [
+        totalGrafts: '3500',
+        items:[
           {
             id: "11",
             date: "2020-07-16",

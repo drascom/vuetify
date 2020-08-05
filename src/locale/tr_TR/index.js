@@ -50,7 +50,8 @@ export default {
     amount:'Miktar',
     note:'Not',
     owner:'Hesap',
-    actions:'İşlem'
+    actions: 'İşlem',
+    totalgrafts: "Toplam Greft"
   },
   toolbar: {
     appname: 'Application',

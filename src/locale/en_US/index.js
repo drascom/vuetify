@@ -51,8 +51,8 @@ export default {
     amount:'Amount',
     note:'Note',
     owner:'Account',
-    actions:'Actions',
-
+    actions: 'Actions',
+    totalgrafts:'Total Grafts'
   },
   toolbar: {
     appname: 'Application',

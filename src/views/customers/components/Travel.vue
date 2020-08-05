@@ -5,13 +5,14 @@
       flat
       height="70"
       class="ml-n2  pl-2 mb-2">
-      <v-card-text style=" position: relative" class="text-h4 d-flex justify-space-between mb-5">
+      <v-card-text style=" position: relative" class="text-h5 d-flex justify-space-between mb-5">
         Flights
         <v-btn
           outlined
           bottom
           right
           color="primary"
+          :small="$vuetify.breakpoint.xs"
           @click.stop="dialog1=true">
           Edit
         </v-btn>
@@ -79,6 +80,7 @@
             <v-btn
               v-if="visit.travel.departure.departureFlight"
               class="mt-n2 text-caption secondary"
+              :small="$vuetify.breakpoint.xs"
               @click="checkFlight">
               <v-icon medium left>mdi-target</v-icon>
               Check Flight
@@ -115,11 +117,22 @@
       hide-overlay
       transition="dialog-bottom-transition">
       <v-card>
-        <v-card-title>
-          <span class="headline">{{ formTitle }}</span>
-        </v-card-title>
         <v-card-text>
           <v-container>
+            <v-toolbar>
+              <v-toolbar-title>{{formTitle}}</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn
+                text
+                color="error lighten-1"
+                :small="$vuetify.breakpoint.xs"
+                @click.stop="close">Cancel</v-btn>
+              <v-btn
+                text
+                color="success lighten-1"
+                :small="$vuetify.breakpoint.xs"
+                @click="save">Save</v-btn>
+            </v-toolbar>
             <v-row>
               <v-col cols="12" sm="6">
                 <VueCtkDateTimePicker
@@ -198,12 +211,12 @@
                 </v-text-field>
               </v-col>
             </v-row>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="error darken-1" @click.stop="close">Cancel</v-btn>
-          <v-btn color="success darken-1" @click="save">Save</v-btn>
-        </v-card-actions>
-        </v-container>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="error darken-1" :small="$vuetify.breakpoint.xs" @click.stop="close">Cancel</v-btn>
+              <v-btn color="success darken-1" :small="$vuetify.breakpoint.xs" @click="save">Save</v-btn>
+            </v-card-actions>
+          </v-container>
         </v-card-text>
 
       </v-card>
@@ -213,12 +226,13 @@
       height="70"
       flat
       class="ml-n2 mt-5 mr-2 pl-4">
-      <v-card-text style=" position: relative" class="text-h4 d-flex justify-space-between mb-5">
+      <v-card-text style=" position: relative" class="text-h5 d-flex justify-space-between mb-5">
         Transfers
         <v-btn
           outlined
           bottom
           right
+          :small="$vuetify.breakpoint.xs"
           color="primary"
           @click.stop="newTransfer()">
           Add New
@@ -235,7 +249,7 @@
           <v-list-item-content>
             <v-container fluid class=pa-0 px-1>
               <v-row no-gutters class="d-flex justify-start align-center text-subtitle-2 text-sm-body-1 text-md-button">
-                <v-col cols="12" sm="4">
+                <v-col cols="12" sm="5">
                   <v-icon style="vertical-align: middle">mdi-bus-side</v-icon>
                   {{ transfer.date | moment('Do MMM, dddd') }}
                 </v-col>
@@ -296,34 +310,36 @@
       fullscreen
       hide-overlay
       transition="dialog-bottom-transition">
-      <v-card class="mx-auto">
-        <v-toolbar dark color="primary">
-          <v-btn
-            icon
-            dark
-            @click="dialog2 = false">
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-          <v-toolbar-title>formTitle</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-toolbar-items>
-            <v-btn @click.stop="close">Cancel</v-btn>
-            <v-btn @click="save">Save</v-btn>
-          </v-toolbar-items>
-        </v-toolbar>
+      <v-card class="">
         <v-card-text>
-          <v-row justify="center">
-            <v-col cols="6">
-              <v-card outlined>
-                <transfers-component :transfer="editedItem"></transfers-component>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn color="error darken-1" @click.stop="close">Cancel</v-btn>
-                  <v-btn color="success darken-1" @click="save">Save</v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
+          <v-container>
+            <v-toolbar>
+              <v-toolbar-title>{{formTitle}}</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn
+                :small="$vuetify.breakpoint.xs"
+                text
+                color="error lighten-1"
+                @click.stop="close">Cancel</v-btn>
+              <v-btn
+                :small="$vuetify.breakpoint.xs"
+                text
+                color="success lighten-1"
+                @click="save">Save</v-btn>
+            </v-toolbar>
+            <v-row justify="center">
+              <v-col cols="12">
+                <v-card outlined>
+                  <transfers-component :transfer="editedItem"></transfers-component>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="error darken-1" :small="$vuetify.breakpoint.xs" @click.stop="close">Cancel</v-btn>
+                    <v-btn color="success darken-1" :small="$vuetify.breakpoint.xs"@click="save">Save</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-card-text>
       </v-card>
     </v-dialog>
