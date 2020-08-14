@@ -178,10 +178,10 @@ const moduleData = {
       date: "05-05-2010",
       doctor: "Dr. Ayhan COLAK",
       treatment: "Saç Ekim",
-      estimated_grafts: "2800",
-      current_grafts: "2800",
+      estimatedGrafts: "2800",
+      currentGrafts: "2800",
       estimatedPrice: "3000 Euros",
-      currentPrice: "3000 Euros",
+      currentPrice: "",
       department: "Anadolu Hastanesi",
       note: "Notes About this visit",
       surgery_note:
@@ -199,14 +199,16 @@ const moduleData = {
         extraDays:'1',
         extraDaysPayment:false,
         costPerNight:80,
-        arrival:{arrivalDate: "2020-07-11 08:30:00", arrivalFlight:"KK-150",arrival_status: true},
-        departure:{departureDate: "2020-07-19 11:30:00",departureFlight: "PGS-13",departureStatus: true,},
+        flights: {
+          arrivalDate: "2020-07-11 08:30:00", arrivalFlight: "KK-150", arrivalStatus: true,
+          departureDate: "2020-07-19 11:30:00", departureFlight: "PGS-13", departureStatus: true,
+        },
         transfers:[
-           {date:'2020-07-11',title:'checkin',fromplace:'Airport',toplace:'1 Hotel',status:true},
-           {date:'2020-07-12',fromplace:'Rixos Beldibi hotel',toplace:'Club Pinara Resort',status:false},
-           {date:'2020-07-13',fromplace:'1 Hotel',toplace:'clinic',status:false},
-           {date:'2020-07-14',title:'checkout',fromplace:'1 Hotel',toplace:'2 hotel',status:false},
-           {date:'2020-07-19',fromplace:'2 Hotel',toplace:'airport',status:false},
+           {date:'2020-07-11',title:'checkin',fromplace:'Airport',toplace:'1 Hotel',confirmed:true,status:true},
+           {date:'2020-07-12',fromplace:'Rixos Beldibi hotel',toplace:'Club Pinara Resort',confirmed:true,status:false},
+           {date:'2020-07-13',fromplace:'1 Hotel',toplace:'clinic',confirmed:true,status:false},
+           {date:'2020-07-14',title:'checkout',fromplace:'1 Hotel',toplace:'2 hotel',confirmed:false,status:false},
+           {date:'2020-07-19',fromplace:'2 Hotel',toplace:'airport',confirmed:false,status:false},
         ]
       },
       payments: {
@@ -311,8 +313,8 @@ const moduleData = {
     }
   },
   mutations: {
-    SET_VISIT(state, payload) {
-      state.activeVisit = payload;
+    SET_VISIT ( state, payload ) {
+      Object.assign(state.activeVisit, payload);
     },
     SET_CUSTOMER(state, payload) {
       state.customer = payload;
@@ -389,18 +391,8 @@ const moduleData = {
           });
       });
     },
-    updateItem({ commit }, item) {
-      return new Promise((resolve, reject) => {
-        axios
-          .post(`/api/data-list/products/${item.id}`, { item })
-          .then(response => {
-            commit("UPDATE_ITEM", response.data);
-            resolve(response);
-          })
-          .catch(error => {
-            reject(error);
-          });
-      });
+    updateVisit({ commit }, payload) {
+      commit("SET_VISIT", payload);
     }
   }
 };

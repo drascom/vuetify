@@ -1,5 +1,4 @@
 <template>
-<v-container fluid>
   <v-menu
     offset-y
     origin="center center"
@@ -10,12 +9,10 @@
             icon
             text
             v-on="on">
-            <v-avatar size="22">
-                <v-img :src="set_flag(flag)"></v-img>
-            </v-avatar> Language
+           Language
         </v-btn>
     </template>
-    <v-list class="pa-0">
+    <v-list>
         <v-list-item
             v-for="(item,index) in locales"
             :key="index"
@@ -32,7 +29,6 @@
         </v-list-item>
     </v-list>
 </v-menu>
-</v-container>
 
 </template>
 

@@ -1,17 +1,17 @@
 <template>
-<v-container fluid id='item'>
+<v-container fluid id='item' style="height:1000px;">
   <v-row>
     <v-col
       cols="12"
       sm="8"
       class="pl-2">
-      <v-container fluid class="secondary lighten-2 mb-2">
+      <v-container fluid class=" mb-2">
         <v-row>
           <v-col class="">
             <v-card class="primary lighten-2" elevation="5">
               <v-row full-width class="v-picker__title  mx-auto ">
                 <v-col cols="12" class="text-h6 d-flex justify-space-between align-end">
-                  <span>{{$t('customer.estimategraft') }}</span> <span class="text-body-1">{{visit.estimated_grafts}}</span>
+                  <span>{{$t('customer.estimategrafts') }}</span> <span class="text-body-1">{{visit.estimatedGrafts}}</span>
                 </v-col>
                 <v-col cols="12" class="text-h6 d-flex justify-space-between align-end ">
                   <span>{{$t('customer.estimateprice') }}</span> <span class="text-body-1">{{visit.estimatedPrice}}</span>
@@ -23,10 +23,10 @@
             <v-card color="success" elevation="5">
               <v-row full-width class="v-picker__title mx-auto">
                 <v-col cols="12" class="text-h6 d-flex justify-space-between align-end">
-                  <span>{{$t('customer.currentgraft') }}</span> <span class="text-body-1">{{visit.current_grafts}}</span>
+                  <span>{{$t('customer.currentgrafts') }}</span> <span class="text-body-1">{{visit.currentGrafts}}</span>
                 </v-col>
                 <v-col cols="12" class="text-h6 d-flex justify-space-between align-end ">
-                  <span>{{$t('customer.currentprice') }}</span> <span class="text-body-1">{{visit.currentPrice}}</span>
+                  <span>{{$t('customer.currentprice') }}</span> <span  class="text-body-1">{{visit.currentPrice ? visit.currentPrice : $t('customer.notcharged')}}</span>
                 </v-col>
               </v-row>
             </v-card>
@@ -117,9 +117,9 @@
                           v-if="row.type!='alacak'">
                           <td
                             class="text-left subtitle-2"
-                            v-for="col,title in row"
+                            v-for="col,title,i in row"
                             v-if="title !='id' && title!='note' && title!='type'"
-                            :key="col.id+col.type">{{ title == 'date' ?  dateFormat(col) : col }}</td>
+                            :key="title+i">{{ title == 'date' ?  dateFormat(col) : col }} </td>
                         </tr>
                         <tr>
                           <td></td>
@@ -170,7 +170,7 @@
                             <v-list-item
                               v-if="title !='stuff' && title !='id'"
                               v-for="value,title in item"
-                              :key="title">
+                              :key="item.id+title">
                               <v-list-item-content>{{ title.toUpperCase().replace(/_/g, " ") }}</v-list-item-content>
                               <v-list-item-content class="justify-end align-end">{{ value }}</v-list-item-content>
                             </v-list-item>

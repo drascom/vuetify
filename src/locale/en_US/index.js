@@ -21,9 +21,9 @@ export default {
     postop:'Post Op. Check',
     photos:'Photos',
     washing:'Hair Wash',
-    estimategraft:'Estimated Grafts',
+    estimategrafts:'Estimated Grafts',
     estimateprice:'Estimated Price',
-    currentgraft:'Current Price',
+    currentgrafts:'Current Price',
     currentprice:'Current Price',
     doctornote:'Surgery Note',
     arrival:'Arrival',
@@ -31,9 +31,10 @@ export default {
     airtport:'Airport',
     ourhotel:'Our Hotel',
     extradays:'Extra Days',
-    costPerNight:'Cost Per Night',
+    costpernight:'Cost Per Night',
     transport:'Transport',
-    departure:'Departure'
+    departure: 'Departure',
+    notcharged:'Not Charged Yet'
   },
   tablefields:{
     id:'ID',

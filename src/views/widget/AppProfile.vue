@@ -52,9 +52,9 @@
     </v-list>
     <v-divider />
     <v-list-item>
-
+ <v-list-item-content>
         <localization />
-     
+ </v-list-item-content>
     </v-list-item>
     <v-list-item
       v-for="(item,index) in menuitems"

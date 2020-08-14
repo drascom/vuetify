@@ -21,9 +21,9 @@ export default {
     postop:'Son Kontroller',
     photos:'Fotoğraf Çekimi',
     washing:'Son Yıkama',
-    estimategraft:'Yaklaşık Graft Sayısı',
+    estimategrafts:'Yaklaşık Graft Sayısı',
     estimateprice:'Yaklaşık Fiyat',
-    currentgraft:'Kesin Graft Sayısı',
+    currentgrafts:'Kesin Graft Sayısı',
     currentprice:'Kesin Fiyat',
     doctornote:'Ameliyat Notu',
     arrival:'Geliş',
@@ -31,9 +31,10 @@ export default {
     airtport:'Hava Alanı',
     ourhotel:'Bizim Otel',
     extradays:'Ekstra Günler',
-    costPerNight:'Gecelik Fiyat',
+    costpernight:'Gecelik Fiyat',
     transport:'Transfer',
-    departure:'Gidiş'
+    departure: 'Gidiş',
+    notcharged: "Tahsil edilmedi."
   },
   tablefields:{
     id:'No',

@@ -3,7 +3,7 @@
   <VueCtkDateTimePicker
     id="Date"
     label="Date"
-    :value="transfer.date"
+    v-model="transfer.date"
     :format="'YYYY-MM-DD HH:mm'"
     formatted="Do MMM ,dddd HH:mm"
     @input="editedItem.date=$event"
